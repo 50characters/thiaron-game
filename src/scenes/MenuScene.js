@@ -134,7 +134,6 @@ class MenuScene extends Phaser.Scene {
         zone.on('pointerdown', () => {
             draw(hoverColor, false);
             txt.setScale(0.97);
-            this.sound.play && this.sound.play('click', { volume: 0.5 });
             callback();
         });
         zone.on('pointerup', () => {

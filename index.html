@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Thiaron - Juego Educativo</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div id="game-container"></div>
+
+    <!-- Phaser 3 (local copy v3.60.0) -->
+    <script src="src/phaser.min.js"></script>
+
+    <!-- Shared state -->
+    <script src="src/GameState.js"></script>
+
+    <!-- Scenes -->
+    <script src="src/scenes/BootScene.js"></script>
+    <script src="src/scenes/MenuScene.js"></script>
+    <script src="src/scenes/HubScene.js"></script>
+    <script src="src/scenes/MultiplicationScene.js"></script>
+    <script src="src/scenes/SoccerScene.js"></script>
+    <script src="src/scenes/AlphabetScene.js"></script>
+    <script src="src/scenes/WordsScene.js"></script>
+    <script src="src/scenes/EnglishScene.js"></script>
+    <script src="src/scenes/MathScene.js"></script>
+
+    <!-- Game entry point -->
+    <script src="src/game.js"></script>
+</body>
+</html>

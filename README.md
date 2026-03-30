@@ -22,36 +22,53 @@ Un juego educativo HTML5 + Phaser 3 para niños de **4 a 10 años**, completamen
 
 ## 🚀 Cómo ejecutar
 
-Abre `index.html` en un servidor local (necesario por CORS al cargar Phaser desde CDN):
+Consulta la guía completa en **[docs/how-to-run.md](docs/how-to-run.md)**.
+
+Inicio rápido:
 
 ```bash
-# Opción 1: Python
+# Python
 python3 -m http.server 8080
+# → http://localhost:8080
 
-# Opción 2: Node.js (npx serve)
+# Node.js
 npx serve .
 ```
 
-Luego visita `http://localhost:8080` en el navegador.
+El juego también se publica automáticamente en **GitHub Pages** tras cada push a `main` mediante el workflow `.github/workflows/deploy.yml`.
+
+## 📚 Documentación
+
+| Documento | Descripción |
+|---|---|
+| [docs/how-to-run.md](docs/how-to-run.md) | Cómo ejecutar el juego localmente (Python, Node.js, VS Code, GitHub Pages) |
+| [docs/adding-a-new-game.md](docs/adding-a-new-game.md) | Guía paso a paso para crear y registrar un nuevo módulo de juego |
 
 ## 📁 Estructura del proyecto
 
 ```
-index.html                   ← Entrada principal
+index.html                        ← Entrada principal
+.github/
+  workflows/
+    deploy.yml                    ← CI/CD: publica en GitHub Pages al hacer push a main
+docs/
+  how-to-run.md                   ← Cómo ejecutar el juego localmente
+  adding-a-new-game.md            ← Guía para añadir un nuevo juego
 src/
-  css/style.css              ← Estilos responsivos
-  GameState.js               ← Estado compartido (edad, puntuación, balones)
-  game.js                    ← Configuración Phaser 3
+  css/style.css                   ← Estilos responsivos
+  GameState.js                    ← Estado compartido (edad, puntuación, balones)
+  game.js                         ← Configuración Phaser 3
+  phaser.min.js                   ← Phaser 3.60.0 (local)
   scenes/
-    BootScene.js             ← Arranque
-    MenuScene.js             ← Selección de grupo de edad
-    HubScene.js              ← Selector de juegos por edad
-    MultiplicationScene.js   ← Tablas de multiplicar
-    SoccerScene.js           ← Mini-juego de fútbol
-    AlphabetScene.js         ← Abecedario
-    WordsScene.js            ← Palabras en español
-    EnglishScene.js          ← Palabras en inglés (8-10)
-    MathScene.js             ← Sumas y restas
+    BootScene.js                  ← Arranque
+    MenuScene.js                  ← Selección de grupo de edad
+    HubScene.js                   ← Selector de juegos por edad
+    MultiplicationScene.js        ← Tablas de multiplicar
+    SoccerScene.js                ← Mini-juego de fútbol
+    AlphabetScene.js              ← Abecedario
+    WordsScene.js                 ← Palabras en español
+    EnglishScene.js               ← Palabras en inglés (8-10)
+    MathScene.js                  ← Sumas y restas
 ```
 
 ## 🛠 Tecnologías

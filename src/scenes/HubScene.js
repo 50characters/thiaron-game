@@ -144,7 +144,7 @@ class HubScene extends Phaser.Scene {
         const zone = this.add.zone(x, y, w, h).setInteractive({ useHandCursor: true });
         zone.on('pointerover', () => draw(hoverColor));
         zone.on('pointerout',  () => draw(color));
-        zone.on('pointerup',   callback);
+        zone.on('pointerdown', callback);
     }
 
     _makeSmallButton(x, y, w, h, label, color, hoverColor, callback) {
@@ -164,6 +164,6 @@ class HubScene extends Phaser.Scene {
         const zone = this.add.zone(x, y, w, h).setInteractive({ useHandCursor: true });
         zone.on('pointerover', () => draw(hoverColor));
         zone.on('pointerout',  () => draw(color));
-        zone.on('pointerup',   callback);
+        zone.on('pointerdown', callback);
     }
 }

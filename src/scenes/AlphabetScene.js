@@ -227,10 +227,7 @@ class AlphabetScene extends Phaser.Scene {
 
         const zone = this.add.zone(x, y, size * 2, size * 2).setInteractive({ useHandCursor: true });
         this._cardGroup.add(zone);
-        zone.on('pointerup', callback);
-    }
-
-    // ─── Quiz mode (age 6-7) ─────────────────────────────────────────────────
+        zone.on('pointerdown', callback);
 
     _buildQuiz() {
         const W = this.W, H = this.H;
@@ -338,7 +335,7 @@ class AlphabetScene extends Phaser.Scene {
 
         zone.on('pointerover', () => draw(0x1a5276));
         zone.on('pointerout',  () => draw(baseColor));
-        zone.on('pointerup', () => {
+        zone.on('pointerdown', () => {
             // Disable all
             this._cardGroup.getChildren().forEach(c => { if (c.input) c.input.enabled = false; });
 
@@ -410,6 +407,6 @@ class AlphabetScene extends Phaser.Scene {
         const zone = this.add.zone(x, y, w, h).setInteractive({ useHandCursor: true });
         zone.on('pointerover', () => draw(hoverColor));
         zone.on('pointerout',  () => draw(color));
-        zone.on('pointerup',   callback);
+        zone.on('pointerdown',   callback);
     }
 }

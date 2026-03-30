@@ -228,6 +228,7 @@ class AlphabetScene extends Phaser.Scene {
         const zone = this.add.zone(x, y, size * 2, size * 2).setInteractive({ useHandCursor: true });
         this._cardGroup.add(zone);
         zone.on('pointerdown', callback);
+    }
 
     _buildQuiz() {
         const W = this.W, H = this.H;

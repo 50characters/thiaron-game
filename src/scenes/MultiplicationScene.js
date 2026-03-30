@@ -311,3 +311,5 @@ class MultiplicationScene extends Phaser.Scene {
         zone.on('pointerover', () => draw(hoverColor));
         zone.on('pointerout',  () => draw(color));
         zone.on('pointerdown',   callback);
+    }
+}

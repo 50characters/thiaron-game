@@ -154,7 +154,7 @@ class MultiplicationScene extends Phaser.Scene {
 
         zone.on('pointerover', () => draw(0x1a5276));
         zone.on('pointerout',  () => draw(0x2980b9));
-        zone.on('pointerup', () => {
+        zone.on('pointerdown', () => {
             this._questionGroup.getChildren().forEach(c => {
                 if (c.input) c.input.enabled = false;
             });
@@ -310,6 +310,4 @@ class MultiplicationScene extends Phaser.Scene {
         const zone = this.add.zone(x, y, w, h).setInteractive({ useHandCursor: true });
         zone.on('pointerover', () => draw(hoverColor));
         zone.on('pointerout',  () => draw(color));
-        zone.on('pointerup',   callback);
-    }
-}
+        zone.on('pointerdown',   callback);

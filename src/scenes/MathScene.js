@@ -248,7 +248,7 @@ class MathScene extends Phaser.Scene {
 
         zone.on('pointerover', () => draw(0x0e6655));
         zone.on('pointerout',  () => draw(baseColor));
-        zone.on('pointerup', () => {
+        zone.on('pointerdown', () => {
             this._qGroup.getChildren().forEach(c => { if (c.input) c.input.enabled = false; });
             if (isCorrect) {
                 draw(0x27ae60);
@@ -318,6 +318,6 @@ class MathScene extends Phaser.Scene {
         const zone = this.add.zone(x, y, w, h).setInteractive({ useHandCursor: true });
         zone.on('pointerover', () => draw(hoverColor));
         zone.on('pointerout',  () => draw(color));
-        zone.on('pointerup',   callback);
+        zone.on('pointerdown',   callback);
     }
 }

@@ -233,7 +233,7 @@ class SoccerScene extends Phaser.Scene {
             const zone = this.add.zone(p.x, y, btnW, btnH).setInteractive({ useHandCursor: true });
             zone.on('pointerover', () => { if (!this.shooting) draw(p.hover, true); });
             zone.on('pointerout',  () => { if (!this.shooting) draw(p.color, true); });
-            zone.on('pointerup',   () => { if (!this.shooting) this._shoot(p.dir, draw, p.color); });
+            zone.on('pointerdown',   () => { if (!this.shooting) this._shoot(p.dir, draw, p.color); });
 
             this.shootBtns.push({ draw, color: p.color, zone, txt });
         });
@@ -436,6 +436,6 @@ class SoccerScene extends Phaser.Scene {
         const zone = this.add.zone(x, y, w, h).setInteractive({ useHandCursor: true }).setDepth(10);
         zone.on('pointerover', () => draw(hoverColor));
         zone.on('pointerout',  () => draw(color));
-        zone.on('pointerup',   callback);
+        zone.on('pointerdown',   callback);
     }
 }

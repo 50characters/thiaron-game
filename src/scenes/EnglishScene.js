@@ -192,7 +192,7 @@ class EnglishScene extends Phaser.Scene {
 
         zone.on('pointerover', () => draw(0x1a5276));
         zone.on('pointerout',  () => draw(baseColor));
-        zone.on('pointerup', () => {
+        zone.on('pointerdown', () => {
             this._qGroup.getChildren().forEach(c => { if (c.input) c.input.enabled = false; });
             if (isCorrect) {
                 draw(0x27ae60);
@@ -263,6 +263,4 @@ class EnglishScene extends Phaser.Scene {
         const zone = this.add.zone(x, y, w, h).setInteractive({ useHandCursor: true });
         zone.on('pointerover', () => draw(hoverColor));
         zone.on('pointerout',  () => draw(color));
-        zone.on('pointerup',   callback);
-    }
-}
+        zone.on('pointerdown',   callback);

@@ -1,0 +1,256 @@
+{
+  "passages": [
+    {
+      "title": "🐬 Los delfines",
+      "text": "Los delfines son mamíferos marinos muy inteligentes. Viven en grupos llamados manadas y se comunican entre sí usando sonidos parecidos a silbidos y clics. Aunque viven en el agua, necesitan salir a la superficie para respirar aire, igual que nosotros. Son conocidos por su carácter juguetón y por ayudarse unos a otros cuando alguno está herido.",
+      "questions": [
+        {
+          "q": "¿Cómo se llama el grupo en que viven los delfines?",
+          "correct": "Manada",
+          "wrong": ["Bandada", "Rebaño", "Colonia"]
+        },
+        {
+          "q": "¿Por qué los delfines salen a la superficie?",
+          "correct": "Para respirar aire",
+          "wrong": ["Para comer peces", "Para jugar", "Para dormir"]
+        },
+        {
+          "q": "¿Qué tipo de animales son los delfines?",
+          "correct": "Mamíferos marinos",
+          "wrong": ["Peces", "Reptiles", "Aves"]
+        }
+      ]
+    },
+    {
+      "title": "🌋 Los volcanes",
+      "text": "Un volcán es una abertura en la corteza terrestre por donde sale magma, que es roca fundida a altísimas temperaturas. Cuando el magma sale al exterior se llama lava. Los volcanes pueden estar activos, dormidos o extintos. Aunque parecen peligrosos, los suelos volcánicos son muy fértiles y muchas personas cultivan cerca de ellos.",
+      "questions": [
+        {
+          "q": "¿Cómo se llama la roca fundida dentro de la Tierra?",
+          "correct": "Magma",
+          "wrong": ["Lava", "Granito", "Carbón"]
+        },
+        {
+          "q": "¿Cómo se llama el magma cuando sale al exterior?",
+          "correct": "Lava",
+          "wrong": ["Magma", "Ceniza", "Vapor"]
+        },
+        {
+          "q": "¿Por qué cultivan personas cerca de los volcanes?",
+          "correct": "El suelo volcánico es muy fértil",
+          "wrong": ["Hace mucho calor", "Hay mucha agua", "Es más barato"]
+        }
+      ]
+    },
+    {
+      "title": "🐜 Las hormigas",
+      "text": "Las hormigas son insectos que viven en colonias enormes. Cada hormiga tiene una función: la reina pone huevos, las obreras buscan comida y construyen el hormiguero, y los soldados defienden la colonia. A pesar de su tamaño, las hormigas pueden cargar objetos mucho más pesados que ellas. Se comunican usando sustancias químicas llamadas feromonas.",
+      "questions": [
+        {
+          "q": "¿Qué hace la reina de las hormigas?",
+          "correct": "Poner huevos",
+          "wrong": ["Buscar comida", "Defender la colonia", "Construir el hormiguero"]
+        },
+        {
+          "q": "¿Cómo se comunican las hormigas?",
+          "correct": "Con feromonas",
+          "wrong": ["Con sonidos", "Con colores", "Con señales de luz"]
+        },
+        {
+          "q": "¿Qué nombre recibe el grupo en que viven las hormigas?",
+          "correct": "Colonia",
+          "wrong": ["Manada", "Enjambre", "Bandada"]
+        }
+      ]
+    },
+    {
+      "title": "☀️ El sistema solar",
+      "text": "El sistema solar está formado por el Sol y todos los cuerpos celestes que giran a su alrededor. Hay ocho planetas: Mercurio, Venus, la Tierra, Marte, Júpiter, Saturno, Urano y Neptuno. La Tierra es el único planeta donde sabemos que existe vida. Saturno es famoso por sus hermosos anillos formados por hielo y polvo.",
+      "questions": [
+        {
+          "q": "¿Cuántos planetas tiene el sistema solar?",
+          "correct": "Ocho",
+          "wrong": ["Siete", "Nueve", "Diez"]
+        },
+        {
+          "q": "¿Qué planeta es famoso por sus anillos?",
+          "correct": "Saturno",
+          "wrong": ["Júpiter", "Urano", "Marte"]
+        },
+        {
+          "q": "¿Cuál es el único planeta con vida conocida?",
+          "correct": "La Tierra",
+          "wrong": ["Marte", "Venus", "Mercurio"]
+        }
+      ]
+    },
+    {
+      "title": "🌊 El agua en la Tierra",
+      "text": "El agua cubre aproximadamente el 71 % de la superficie terrestre, pero solo el 3 % es agua dulce apta para beber. El agua sigue un ciclo: se evapora con el calor del sol, forma nubes y regresa a la Tierra en forma de lluvia o nieve. Sin agua, ningún ser vivo podría sobrevivir. Por eso es muy importante ahorrar y no contaminarla.",
+      "questions": [
+        {
+          "q": "¿Qué porcentaje de la superficie terrestre cubre el agua?",
+          "correct": "71 %",
+          "wrong": ["50 %", "30 %", "90 %"]
+        },
+        {
+          "q": "¿Qué forma tiene el agua cuando vuelve del cielo?",
+          "correct": "Lluvia o nieve",
+          "wrong": ["Vapor", "Hielo", "Rocío"]
+        },
+        {
+          "q": "¿Por qué debemos ahorrar agua?",
+          "correct": "Porque es esencial para la vida",
+          "wrong": ["Porque es muy cara", "Porque pesa mucho", "Porque es difícil de obtener"]
+        }
+      ]
+    },
+    {
+      "title": "📚 La biblioteca",
+      "text": "Una biblioteca es un lugar donde se guardan y prestan libros. Los libros están organizados por temas para encontrarlos fácilmente. Existen bibliotecas públicas abiertas para todos y también bibliotecas escolares dentro de los colegios. Hoy en día también hay bibliotecas digitales donde los libros se pueden leer en una tableta o un ordenador. Leer libros ayuda a aprender nuevas palabras y a desarrollar la imaginación.",
+      "questions": [
+        {
+          "q": "¿Para qué sirve una biblioteca?",
+          "correct": "Guardar y prestar libros",
+          "wrong": ["Ver películas", "Comprar libros", "Escuchar música"]
+        },
+        {
+          "q": "¿Cómo están organizados los libros en la biblioteca?",
+          "correct": "Por temas",
+          "wrong": ["Por colores", "Por tamaño", "Por precio"]
+        },
+        {
+          "q": "¿Qué beneficio tiene leer libros?",
+          "correct": "Aprender palabras y desarrollar la imaginación",
+          "wrong": ["Mejorar la vista", "Ganar dinero", "Ponerse fuerte"]
+        }
+      ]
+    },
+    {
+      "title": "🦁 La sabana africana",
+      "text": "La sabana africana es una gran llanura con hierba alta y pocos árboles. Allí viven animales como leones, elefantes, jirafas y cebras. Los leones cazan en grupo y son llamados el rey de la selva. Las jirafas tienen el cuello muy largo para alcanzar las hojas de los árboles más altos. En la sabana existe un equilibrio natural: los depredadores controlan la población de otros animales.",
+      "questions": [
+        {
+          "q": "¿Por qué tienen el cuello largo las jirafas?",
+          "correct": "Para alcanzar hojas de árboles altos",
+          "wrong": ["Para correr más rápido", "Para nadar mejor", "Para oír a los leones"]
+        },
+        {
+          "q": "¿Cómo cazan los leones?",
+          "correct": "En grupo",
+          "wrong": ["Solos", "De noche solamente", "Con trampas"]
+        },
+        {
+          "q": "¿Qué tipo de paisaje es la sabana?",
+          "correct": "Llanura con hierba alta y pocos árboles",
+          "wrong": ["Bosque denso", "Desierto de arena", "Montaña nevada"]
+        }
+      ]
+    },
+    {
+      "title": "🤖 Los robots",
+      "text": "Un robot es una máquina programada para realizar tareas de forma automática. Los robots se usan en fábricas para construir coches, en hospitales para ayudar en operaciones y en el espacio para explorar otros planetas. Para funcionar, los robots necesitan sensores que les permitan percibir su entorno y un programa informático que indique qué deben hacer.",
+      "questions": [
+        {
+          "q": "¿Qué necesita un robot para percibir su entorno?",
+          "correct": "Sensores",
+          "wrong": ["Ojos", "Orejas", "Antenas"]
+        },
+        {
+          "q": "¿Para qué se usan robots en hospitales?",
+          "correct": "Para ayudar en operaciones",
+          "wrong": ["Para limpiar", "Para cocinar", "Para recibir pacientes"]
+        },
+        {
+          "q": "¿Qué es un robot?",
+          "correct": "Una máquina programada para realizar tareas",
+          "wrong": ["Un animal mecánico", "Un juguete eléctrico", "Un ordenador portátil"]
+        }
+      ]
+    },
+    {
+      "title": "🌿 La fotosíntesis",
+      "text": "Las plantas fabrican su propio alimento mediante la fotosíntesis. Para ello necesitan luz solar, agua y dióxido de carbono. Durante la fotosíntesis, las plantas producen glucosa, que les sirve de energía, y liberan oxígeno al aire. Gracias a las plantas, los animales y las personas disponemos del oxígeno que necesitamos para respirar.",
+      "questions": [
+        {
+          "q": "¿Qué producen las plantas durante la fotosíntesis?",
+          "correct": "Glucosa y oxígeno",
+          "wrong": ["Agua y sal", "Dióxido de carbono", "Azúcar y nitrógeno"]
+        },
+        {
+          "q": "¿Qué tres cosas necesitan las plantas para hacer la fotosíntesis?",
+          "correct": "Luz, agua y dióxido de carbono",
+          "wrong": ["Tierra, viento y lluvia", "Sol, sal y abono", "Aire, frío y minerales"]
+        },
+        {
+          "q": "¿Por qué son importantes las plantas para los animales?",
+          "correct": "Producen el oxígeno que respiramos",
+          "wrong": ["Dan sombra", "Producen agua", "Generan calor"]
+        }
+      ]
+    },
+    {
+      "title": "⚽ Historia del fútbol",
+      "text": "El fútbol moderno nació en Inglaterra en el siglo XIX. En 1863 se crearon las primeras reglas oficiales. Hoy es el deporte más popular del mundo, con millones de aficionados en todos los continentes. El objetivo del juego es meter el balón en la portería del equipo contrario más veces que ellos. Cada equipo tiene once jugadores, incluido el portero.",
+      "questions": [
+        {
+          "q": "¿Dónde nació el fútbol moderno?",
+          "correct": "Inglaterra",
+          "wrong": ["España", "Brasil", "Alemania"]
+        },
+        {
+          "q": "¿Cuántos jugadores tiene cada equipo?",
+          "correct": "Once",
+          "wrong": ["Diez", "Nueve", "Doce"]
+        },
+        {
+          "q": "¿Cuándo se crearon las primeras reglas oficiales?",
+          "correct": "En 1863",
+          "wrong": ["En 1900", "En 1750", "En 1950"]
+        }
+      ]
+    },
+    {
+      "title": "🍫 El chocolate",
+      "text": "El chocolate se elabora a partir de las semillas del cacao, un árbol originario de América. Los mayas y los aztecas ya preparaban bebidas con cacao hace más de 3.000 años. Cuando los españoles llegaron a América, llevaron el cacao a Europa, donde se le añadió azúcar y se hizo muy popular. El chocolate negro tiene más cacao y es más amargo, mientras que el chocolate con leche es más dulce.",
+      "questions": [
+        {
+          "q": "¿De qué se elabora el chocolate?",
+          "correct": "Semillas de cacao",
+          "wrong": ["Semillas de café", "Leche en polvo", "Vainilla"]
+        },
+        {
+          "q": "¿Quiénes usaban cacao antes que los europeos?",
+          "correct": "Los mayas y los aztecas",
+          "wrong": ["Los romanos", "Los chinos", "Los egipcios"]
+        },
+        {
+          "q": "¿Qué añadieron los europeos al cacao?",
+          "correct": "Azúcar",
+          "wrong": ["Sal", "Miel", "Limón"]
+        }
+      ]
+    },
+    {
+      "title": "🏔️ El Everest",
+      "text": "El monte Everest, situado en los Himalayas entre Nepal y Tíbet, es la montaña más alta del mundo con 8.849 metros de altitud. La primera ascensión oficial al Everest fue realizada en 1953 por Edmund Hillary y Tenzing Norgay. Escalar el Everest es muy peligroso: las temperaturas bajan a -60 °C y el aire tiene poco oxígeno, por lo que los alpinistas deben llevar botellas de oxígeno.",
+      "questions": [
+        {
+          "q": "¿Cuánto mide el Everest?",
+          "correct": "8.849 metros",
+          "wrong": ["7.000 metros", "9.500 metros", "6.500 metros"]
+        },
+        {
+          "q": "¿En qué año se realizó la primera ascensión oficial?",
+          "correct": "1953",
+          "wrong": ["1903", "1920", "1970"]
+        },
+        {
+          "q": "¿Por qué los alpinistas llevan botellas de oxígeno?",
+          "correct": "Porque el aire tiene poco oxígeno",
+          "wrong": ["Porque hace mucho frío", "Porque es muy alto", "Porque pesa mucho"]
+        }
+      ]
+    }
+  ]
+}

@@ -7,17 +7,29 @@
         {
           "q": "¿Cómo se llama el grupo en que viven los delfines?",
           "correct": "Manada",
-          "wrong": ["Bandada", "Rebaño", "Colonia"]
+          "wrong": [
+            "Bandada",
+            "Rebaño",
+            "Colonia"
+          ]
         },
         {
           "q": "¿Por qué los delfines salen a la superficie?",
           "correct": "Para respirar aire",
-          "wrong": ["Para comer peces", "Para jugar", "Para dormir"]
+          "wrong": [
+            "Para comer peces",
+            "Para jugar",
+            "Para dormir"
+          ]
         },
         {
           "q": "¿Qué tipo de animales son los delfines?",
           "correct": "Mamíferos marinos",
-          "wrong": ["Peces", "Reptiles", "Aves"]
+          "wrong": [
+            "Peces",
+            "Reptiles",
+            "Aves"
+          ]
         }
       ]
     },
@@ -28,17 +40,29 @@
         {
           "q": "¿Cómo se llama la roca fundida dentro de la Tierra?",
           "correct": "Magma",
-          "wrong": ["Lava", "Granito", "Carbón"]
+          "wrong": [
+            "Lava",
+            "Granito",
+            "Carbón"
+          ]
         },
         {
           "q": "¿Cómo se llama el magma cuando sale al exterior?",
           "correct": "Lava",
-          "wrong": ["Magma", "Ceniza", "Vapor"]
+          "wrong": [
+            "Magma",
+            "Ceniza",
+            "Vapor"
+          ]
         },
         {
           "q": "¿Por qué cultivan personas cerca de los volcanes?",
           "correct": "El suelo volcánico es muy fértil",
-          "wrong": ["Hace mucho calor", "Hay mucha agua", "Es más barato"]
+          "wrong": [
+            "Hace mucho calor",
+            "Hay mucha agua",
+            "Es más barato"
+          ]
         }
       ]
     },
@@ -49,17 +73,29 @@
         {
           "q": "¿Qué hace la reina de las hormigas?",
           "correct": "Poner huevos",
-          "wrong": ["Buscar comida", "Defender la colonia", "Construir el hormiguero"]
+          "wrong": [
+            "Buscar comida",
+            "Defender la colonia",
+            "Construir el hormiguero"
+          ]
         },
         {
           "q": "¿Cómo se comunican las hormigas?",
           "correct": "Con feromonas",
-          "wrong": ["Con sonidos", "Con colores", "Con señales de luz"]
+          "wrong": [
+            "Con sonidos",
+            "Con colores",
+            "Con señales de luz"
+          ]
         },
         {
           "q": "¿Qué nombre recibe el grupo en que viven las hormigas?",
           "correct": "Colonia",
-          "wrong": ["Manada", "Enjambre", "Bandada"]
+          "wrong": [
+            "Manada",
+            "Enjambre",
+            "Bandada"
+          ]
         }
       ]
     },
@@ -70,17 +106,29 @@
         {
           "q": "¿Cuántos planetas tiene el sistema solar?",
           "correct": "Ocho",
-          "wrong": ["Siete", "Nueve", "Diez"]
+          "wrong": [
+            "Siete",
+            "Nueve",
+            "Diez"
+          ]
         },
         {
           "q": "¿Qué planeta es famoso por sus anillos?",
           "correct": "Saturno",
-          "wrong": ["Júpiter", "Urano", "Marte"]
+          "wrong": [
+            "Júpiter",
+            "Urano",
+            "Marte"
+          ]
         },
         {
           "q": "¿Cuál es el único planeta con vida conocida?",
           "correct": "La Tierra",
-          "wrong": ["Marte", "Venus", "Mercurio"]
+          "wrong": [
+            "Marte",
+            "Venus",
+            "Mercurio"
+          ]
         }
       ]
     },
@@ -91,17 +139,29 @@
         {
           "q": "¿Qué porcentaje de la superficie terrestre cubre el agua?",
           "correct": "71 %",
-          "wrong": ["50 %", "30 %", "90 %"]
+          "wrong": [
+            "50 %",
+            "30 %",
+            "90 %"
+          ]
         },
         {
           "q": "¿Qué forma tiene el agua cuando vuelve del cielo?",
           "correct": "Lluvia o nieve",
-          "wrong": ["Vapor", "Hielo", "Rocío"]
+          "wrong": [
+            "Vapor",
+            "Hielo",
+            "Rocío"
+          ]
         },
         {
           "q": "¿Por qué debemos ahorrar agua?",
           "correct": "Porque es esencial para la vida",
-          "wrong": ["Porque es muy cara", "Porque pesa mucho", "Porque es difícil de obtener"]
+          "wrong": [
+            "Porque es muy cara",
+            "Porque pesa mucho",
+            "Porque es difícil de obtener"
+          ]
         }
       ]
     },
@@ -112,17 +172,29 @@
         {
           "q": "¿Para qué sirve una biblioteca?",
           "correct": "Guardar y prestar libros",
-          "wrong": ["Ver películas", "Comprar libros", "Escuchar música"]
+          "wrong": [
+            "Ver películas",
+            "Comprar libros",
+            "Escuchar música"
+          ]
         },
         {
           "q": "¿Cómo están organizados los libros en la biblioteca?",
           "correct": "Por temas",
-          "wrong": ["Por colores", "Por tamaño", "Por precio"]
+          "wrong": [
+            "Por colores",
+            "Por tamaño",
+            "Por precio"
+          ]
         },
         {
           "q": "¿Qué beneficio tiene leer libros?",
           "correct": "Aprender palabras y desarrollar la imaginación",
-          "wrong": ["Mejorar la vista", "Ganar dinero", "Ponerse fuerte"]
+          "wrong": [
+            "Mejorar la vista",
+            "Ganar dinero",
+            "Ponerse fuerte"
+          ]
         }
       ]
     },
@@ -133,17 +205,29 @@
         {
           "q": "¿Por qué tienen el cuello largo las jirafas?",
           "correct": "Para alcanzar hojas de árboles altos",
-          "wrong": ["Para correr más rápido", "Para nadar mejor", "Para oír a los leones"]
+          "wrong": [
+            "Para correr más rápido",
+            "Para nadar mejor",
+            "Para oír a los leones"
+          ]
         },
         {
           "q": "¿Cómo cazan los leones?",
           "correct": "En grupo",
-          "wrong": ["Solos", "De noche solamente", "Con trampas"]
+          "wrong": [
+            "Solos",
+            "De noche solamente",
+            "Con trampas"
+          ]
         },
         {
           "q": "¿Qué tipo de paisaje es la sabana?",
           "correct": "Llanura con hierba alta y pocos árboles",
-          "wrong": ["Bosque denso", "Desierto de arena", "Montaña nevada"]
+          "wrong": [
+            "Bosque denso",
+            "Desierto de arena",
+            "Montaña nevada"
+          ]
         }
       ]
     },
@@ -154,17 +238,29 @@
         {
           "q": "¿Qué necesita un robot para percibir su entorno?",
           "correct": "Sensores",
-          "wrong": ["Ojos", "Orejas", "Antenas"]
+          "wrong": [
+            "Ojos",
+            "Orejas",
+            "Antenas"
+          ]
         },
         {
           "q": "¿Para qué se usan robots en hospitales?",
           "correct": "Para ayudar en operaciones",
-          "wrong": ["Para limpiar", "Para cocinar", "Para recibir pacientes"]
+          "wrong": [
+            "Para limpiar",
+            "Para cocinar",
+            "Para recibir pacientes"
+          ]
         },
         {
           "q": "¿Qué es un robot?",
           "correct": "Una máquina programada para realizar tareas",
-          "wrong": ["Un animal mecánico", "Un juguete eléctrico", "Un ordenador portátil"]
+          "wrong": [
+            "Un animal mecánico",
+            "Un juguete eléctrico",
+            "Un ordenador portátil"
+          ]
         }
       ]
     },
@@ -175,17 +271,29 @@
         {
           "q": "¿Qué producen las plantas durante la fotosíntesis?",
           "correct": "Glucosa y oxígeno",
-          "wrong": ["Agua y sal", "Dióxido de carbono", "Azúcar y nitrógeno"]
+          "wrong": [
+            "Agua y sal",
+            "Dióxido de carbono",
+            "Azúcar y nitrógeno"
+          ]
         },
         {
           "q": "¿Qué tres cosas necesitan las plantas para hacer la fotosíntesis?",
           "correct": "Luz, agua y dióxido de carbono",
-          "wrong": ["Tierra, viento y lluvia", "Sol, sal y abono", "Aire, frío y minerales"]
+          "wrong": [
+            "Tierra, viento y lluvia",
+            "Sol, sal y abono",
+            "Aire, frío y minerales"
+          ]
         },
         {
           "q": "¿Por qué son importantes las plantas para los animales?",
           "correct": "Producen el oxígeno que respiramos",
-          "wrong": ["Dan sombra", "Producen agua", "Generan calor"]
+          "wrong": [
+            "Dan sombra",
+            "Producen agua",
+            "Generan calor"
+          ]
         }
       ]
     },
@@ -196,17 +304,29 @@
         {
           "q": "¿Dónde nació el fútbol moderno?",
           "correct": "Inglaterra",
-          "wrong": ["España", "Brasil", "Alemania"]
+          "wrong": [
+            "España",
+            "Brasil",
+            "Alemania"
+          ]
         },
         {
           "q": "¿Cuántos jugadores tiene cada equipo?",
           "correct": "Once",
-          "wrong": ["Diez", "Nueve", "Doce"]
+          "wrong": [
+            "Diez",
+            "Nueve",
+            "Doce"
+          ]
         },
         {
           "q": "¿Cuándo se crearon las primeras reglas oficiales?",
           "correct": "En 1863",
-          "wrong": ["En 1900", "En 1750", "En 1950"]
+          "wrong": [
+            "En 1900",
+            "En 1750",
+            "En 1950"
+          ]
         }
       ]
     },
@@ -217,17 +337,29 @@
         {
           "q": "¿De qué se elabora el chocolate?",
           "correct": "Semillas de cacao",
-          "wrong": ["Semillas de café", "Leche en polvo", "Vainilla"]
+          "wrong": [
+            "Semillas de café",
+            "Leche en polvo",
+            "Vainilla"
+          ]
         },
         {
           "q": "¿Quiénes usaban cacao antes que los europeos?",
           "correct": "Los mayas y los aztecas",
-          "wrong": ["Los romanos", "Los chinos", "Los egipcios"]
+          "wrong": [
+            "Los romanos",
+            "Los chinos",
+            "Los egipcios"
+          ]
         },
         {
           "q": "¿Qué añadieron los europeos al cacao?",
           "correct": "Azúcar",
-          "wrong": ["Sal", "Miel", "Limón"]
+          "wrong": [
+            "Sal",
+            "Miel",
+            "Limón"
+          ]
         }
       ]
     },
@@ -238,17 +370,689 @@
         {
           "q": "¿Cuánto mide el Everest?",
           "correct": "8.849 metros",
-          "wrong": ["7.000 metros", "9.500 metros", "6.500 metros"]
+          "wrong": [
+            "7.000 metros",
+            "9.500 metros",
+            "6.500 metros"
+          ]
         },
         {
           "q": "¿En qué año se realizó la primera ascensión oficial?",
           "correct": "1953",
-          "wrong": ["1903", "1920", "1970"]
+          "wrong": [
+            "1903",
+            "1920",
+            "1970"
+          ]
         },
         {
           "q": "¿Por qué los alpinistas llevan botellas de oxígeno?",
           "correct": "Porque el aire tiene poco oxígeno",
-          "wrong": ["Porque hace mucho frío", "Porque es muy alto", "Porque pesa mucho"]
+          "wrong": [
+            "Porque hace mucho frío",
+            "Porque es muy alto",
+            "Porque pesa mucho"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🐝 Las abejas",
+      "text": "Las abejas son insectos que viven en colmenas formadas por miles de individuos. La abeja reina es la única que pone huevos; las obreras recolectan néctar de las flores y producen miel; los zánganos se encargan de fertilizar a la reina. Las abejas son esenciales para la naturaleza porque polinizan las plantas, lo que permite que crezcan frutos y semillas. Sin ellas, muchos alimentos desaparecerían.",
+      "questions": [
+        {
+          "q": "¿Cuál es la función de las abejas obreras?",
+          "correct": "Recolectar néctar y producir miel",
+          "wrong": [
+            "Poner huevos",
+            "Fertilizar a la reina",
+            "Construir nuevas colmenas"
+          ]
+        },
+        {
+          "q": "¿Por qué son importantes las abejas para la naturaleza?",
+          "correct": "Polinizan las plantas",
+          "wrong": [
+            "Producen oxígeno",
+            "Controlan otros insectos",
+            "Purifican el agua"
+          ]
+        },
+        {
+          "q": "¿Qué nombre recibe el hogar de las abejas?",
+          "correct": "Colmena",
+          "wrong": [
+            "Hormiguero",
+            "Madriguera",
+            "Panal exterior"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "♻️ El reciclaje",
+      "text": "Reciclar significa transformar materiales usados en nuevos productos para reducir la basura. Los materiales más reciclados son el papel, el vidrio, el plástico y los metales. Para reciclar correctamente hay que separar los residuos en diferentes contenedores según su tipo. Reciclar ahorra energía, protege el medio ambiente y reduce la contaminación. Cada persona puede colaborar reciclando desde casa.",
+      "questions": [
+        {
+          "q": "¿Qué significa reciclar?",
+          "correct": "Transformar materiales usados en nuevos productos",
+          "wrong": [
+            "Tirar la basura al río",
+            "Quemar los residuos",
+            "Guardar objetos viejos"
+          ]
+        },
+        {
+          "q": "¿Cómo se recicla correctamente?",
+          "correct": "Separando los residuos según su tipo",
+          "wrong": [
+            "Mezclando todo en un cubo",
+            "Enterrando los residuos",
+            "Lavando la basura"
+          ]
+        },
+        {
+          "q": "¿Cuál de estos es un beneficio del reciclaje?",
+          "correct": "Ahorra energía y reduce la contaminación",
+          "wrong": [
+            "Produce más plástico",
+            "Aumenta los residuos",
+            "Eleva el precio de los materiales"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🌙 La Luna",
+      "text": "La Luna es el único satélite natural de la Tierra y el objeto más brillante del cielo nocturno después del Sol. No tiene luz propia: refleja la luz solar. La Luna tarda aproximadamente 28 días en dar una vuelta completa alrededor de la Tierra, lo que origina las distintas fases lunares: nueva, creciente, llena y menguante. Su gravedad es la que provoca las mareas en los océanos.",
+      "questions": [
+        {
+          "q": "¿Por qué brilla la Luna?",
+          "correct": "Refleja la luz del Sol",
+          "wrong": [
+            "Produce su propia luz",
+            "Tiene volcanes encendidos",
+            "Absorbe la luz de las estrellas"
+          ]
+        },
+        {
+          "q": "¿Cuánto tarda la Luna en rodear la Tierra?",
+          "correct": "Unos 28 días",
+          "wrong": [
+            "365 días",
+            "7 días",
+            "24 horas"
+          ]
+        },
+        {
+          "q": "¿Qué fenómeno provoca la gravedad de la Luna?",
+          "correct": "Las mareas en los océanos",
+          "wrong": [
+            "Los terremotos",
+            "Las lluvias",
+            "Los eclipses de Sol"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🦕 Los dinosaurios",
+      "text": "Los dinosaurios fueron reptiles que dominaron la Tierra durante millones de años. Existieron gran variedad de especies: algunos eran herbívoros enormes como el Brachiosaurus, y otros eran carnívoros peligrosos como el Tyrannosaurus rex. Se extinguieron hace aproximadamente 66 millones de años, posiblemente a causa del impacto de un gran meteorito que cambió el clima del planeta. Las aves actuales son sus descendientes más cercanos.",
+      "questions": [
+        {
+          "q": "¿Hace cuánto tiempo se extinguieron los dinosaurios?",
+          "correct": "Hace unos 66 millones de años",
+          "wrong": [
+            "Hace 1.000 años",
+            "Hace 10 millones de años",
+            "Hace 200 millones de años"
+          ]
+        },
+        {
+          "q": "¿Cuál podría ser la causa de la extinción de los dinosaurios?",
+          "correct": "El impacto de un gran meteorito",
+          "wrong": [
+            "Una inundación global",
+            "El frío extremo del polo",
+            "Una epidemia de enfermedades"
+          ]
+        },
+        {
+          "q": "¿Qué animales actuales son los descendientes más cercanos de los dinosaurios?",
+          "correct": "Las aves",
+          "wrong": [
+            "Los cocodrilos",
+            "Los lagartos",
+            "Las tortugas"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🌈 El arco iris",
+      "text": "El arco iris es un fenómeno óptico que aparece en el cielo cuando la luz solar atraviesa las gotas de agua en el aire. La luz blanca del Sol se descompone en sus colores al pasar por las gotas: rojo, naranja, amarillo, verde, azul, añil y violeta. Siempre aparece en el lado opuesto al Sol. Para verlo, el observador debe tener el Sol a su espalda y la lluvia enfrente.",
+      "questions": [
+        {
+          "q": "¿Qué provoca la aparición de un arco iris?",
+          "correct": "La luz solar que atraviesa gotas de agua",
+          "wrong": [
+            "El choque de nubes",
+            "El viento fuerte",
+            "La luna llena"
+          ]
+        },
+        {
+          "q": "¿Cuántos colores tiene el arco iris?",
+          "correct": "Siete",
+          "wrong": [
+            "Cinco",
+            "Tres",
+            "Diez"
+          ]
+        },
+        {
+          "q": "¿Dónde debe estar el Sol para ver un arco iris?",
+          "correct": "A la espalda del observador",
+          "wrong": [
+            "Frente al observador",
+            "Encima del observador",
+            "Detrás de las nubes"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🌳 La selva amazónica",
+      "text": "La selva amazónica, ubicada en América del Sur, es el bosque tropical más grande del mundo. Cubre más de 5 millones de kilómetros cuadrados y alberga millones de especies de plantas, animales e insectos. Produce una gran cantidad del oxígeno del planeta y regula el clima global, por lo que se la llama \"el pulmón del mundo\". La deforestación y los incendios amenazan gravemente este ecosistema.",
+      "questions": [
+        {
+          "q": "¿Por qué se llama a la selva amazónica \"el pulmón del mundo\"?",
+          "correct": "Porque produce gran cantidad de oxígeno",
+          "wrong": [
+            "Porque tiene muchos animales",
+            "Porque hay muchos ríos",
+            "Porque regula las mareas"
+          ]
+        },
+        {
+          "q": "¿En qué continente se encuentra la selva amazónica?",
+          "correct": "América del Sur",
+          "wrong": [
+            "África",
+            "Asia",
+            "Australia"
+          ]
+        },
+        {
+          "q": "¿Qué amenaza a la selva amazónica?",
+          "correct": "La deforestación y los incendios",
+          "wrong": [
+            "El frío excesivo",
+            "Las inundaciones permanentes",
+            "La falta de lluvia"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🌍 Los continentes",
+      "text": "La superficie terrestre está dividida en siete continentes: Asia, África, América del Norte, América del Sur, Europa, Oceanía y la Antártida. Asia es el continente más grande y más poblado. La Antártida es el más frío y está cubierta de hielo casi en su totalidad. Los continentes están separados por océanos: el Atlántico, el Pacífico, el Índico, el Ártico y el Antártico.",
+      "questions": [
+        {
+          "q": "¿Cuántos continentes hay en la Tierra?",
+          "correct": "Siete",
+          "wrong": [
+            "Cinco",
+            "Seis",
+            "Ocho"
+          ]
+        },
+        {
+          "q": "¿Cuál es el continente más grande y más poblado?",
+          "correct": "Asia",
+          "wrong": [
+            "África",
+            "América",
+            "Europa"
+          ]
+        },
+        {
+          "q": "¿Cuál es el continente más frío?",
+          "correct": "La Antártida",
+          "wrong": [
+            "El Ártico",
+            "Asia",
+            "Europa"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🦋 Las mariposas",
+      "text": "Las mariposas son insectos conocidos por sus coloridas alas. Su vida atraviesa cuatro etapas: huevo, oruga, crisálida y mariposa adulta. Este proceso se llama metamorfosis. Las orugas se alimentan principalmente de hojas; una vez convertidas en mariposas, se nutren del néctar de las flores. Los colores de sus alas sirven tanto para atraer pareja como para espantar a los depredadores.",
+      "questions": [
+        {
+          "q": "¿Cuántas etapas tiene la vida de una mariposa?",
+          "correct": "Cuatro",
+          "wrong": [
+            "Dos",
+            "Tres",
+            "Cinco"
+          ]
+        },
+        {
+          "q": "¿Cómo se llama el proceso de transformación de la mariposa?",
+          "correct": "Metamorfosis",
+          "wrong": [
+            "Fotosíntesis",
+            "Reproducción",
+            "Evolución"
+          ]
+        },
+        {
+          "q": "¿Para qué sirven los colores de las alas?",
+          "correct": "Para atraer pareja y espantar depredadores",
+          "wrong": [
+            "Para volar más rápido",
+            "Para absorber la luz solar",
+            "Para protegerse de la lluvia"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "⚡ La electricidad",
+      "text": "La electricidad es una forma de energía producida por el movimiento de partículas llamadas electrones. Se genera en centrales eléctricas usando diferentes fuentes: agua (hidroeléctrica), viento (eólica), sol (solar) o combustibles fósiles. Llega a los hogares a través de cables y transformadores. Usamos electricidad para encender luces, cargar móviles, ver la televisión y muchas otras actividades cotidianas.",
+      "questions": [
+        {
+          "q": "¿Qué partículas están relacionadas con la electricidad?",
+          "correct": "Los electrones",
+          "wrong": [
+            "Los protones",
+            "Los neutrones",
+            "Los fotones"
+          ]
+        },
+        {
+          "q": "¿Cómo se llama la electricidad generada por el agua?",
+          "correct": "Hidroeléctrica",
+          "wrong": [
+            "Eólica",
+            "Solar",
+            "Geotérmica"
+          ]
+        },
+        {
+          "q": "¿Cómo llega la electricidad a los hogares?",
+          "correct": "A través de cables y transformadores",
+          "wrong": [
+            "Por tuberías de agua",
+            "Mediante ondas de radio",
+            "A través del suelo"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🏛️ Los mayas",
+      "text": "Los mayas fueron una civilización que floreció en Mesoamérica durante más de 2.000 años. Eran grandes astrónomos y matemáticos: desarrollaron un calendario muy preciso y fueron de los primeros en usar el concepto del cero. Construyeron impresionantes pirámides y ciudades en la selva. También inventaron su propio sistema de escritura con jeroglíficos. Aunque su civilización clásica decayó, los mayas siguen existiendo hoy en México y Centroamérica.",
+      "questions": [
+        {
+          "q": "¿En qué región vivieron los mayas?",
+          "correct": "Mesoamérica",
+          "wrong": [
+            "América del Sur",
+            "Europa",
+            "África"
+          ]
+        },
+        {
+          "q": "¿Qué concepto matemático usaron los mayas entre los primeros?",
+          "correct": "El cero",
+          "wrong": [
+            "El número pi",
+            "Las fracciones",
+            "Los números negativos"
+          ]
+        },
+        {
+          "q": "¿Qué sistema de escritura usaban los mayas?",
+          "correct": "Jeroglíficos",
+          "wrong": [
+            "Letras del alfabeto",
+            "Números romanos",
+            "Pictogramas chinos"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🐋 Las ballenas",
+      "text": "Las ballenas son los animales más grandes que han existido en la Tierra. Son mamíferos marinos que respiran aire y dan a luz a sus crías vivas. La ballena azul puede medir hasta 30 metros de largo y pesar 150 toneladas. A pesar de su enorme tamaño, se alimentan principalmente de krill, que son pequeños crustáceos. Se comunican mediante cantos y ultrasonidos que pueden escucharse a grandes distancias.",
+      "questions": [
+        {
+          "q": "¿De qué se alimenta principalmente la ballena azul?",
+          "correct": "De krill",
+          "wrong": [
+            "De tiburones",
+            "De peces grandes",
+            "De algas"
+          ]
+        },
+        {
+          "q": "¿Cómo se comunican las ballenas?",
+          "correct": "Mediante cantos y ultrasonidos",
+          "wrong": [
+            "Con silbidos agudos",
+            "Moviéndose las aletas",
+            "Con destellos de luz"
+          ]
+        },
+        {
+          "q": "¿Qué tipo de animal es la ballena?",
+          "correct": "Mamífero marino",
+          "wrong": [
+            "Pez gigante",
+            "Reptil marino",
+            "Anfibio"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🏺 El antiguo Egipto",
+      "text": "El antiguo Egipto fue una de las civilizaciones más avanzadas de la historia. Se desarrolló a orillas del río Nilo, cuyas crecidas fertilizaban los campos cada año. Los faraones eran sus gobernantes, considerados dioses en la Tierra. Los egipcios construyeron las famosas pirámides como tumbas para sus reyes. También inventaron un sistema de escritura propio llamado jeroglíficos y desarrollaron conocimientos avanzados de matemáticas y medicina.",
+      "questions": [
+        {
+          "q": "¿A orillas de qué río se desarrolló el antiguo Egipto?",
+          "correct": "El río Nilo",
+          "wrong": [
+            "El río Amazonas",
+            "El río Éufrates",
+            "El río Yangtsé"
+          ]
+        },
+        {
+          "q": "¿Para qué construyeron los egipcios las pirámides?",
+          "correct": "Como tumbas para sus reyes",
+          "wrong": [
+            "Para guardar alimentos",
+            "Para observar las estrellas",
+            "Como templos de culto"
+          ]
+        },
+        {
+          "q": "¿Cómo se llamaba el sistema de escritura egipcio?",
+          "correct": "Jeroglíficos",
+          "wrong": [
+            "Alfabeto",
+            "Cuneiforme",
+            "Sánscrito"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "❄️ Los osos polares",
+      "text": "Los osos polares viven en el Ártico, una de las zonas más frías del planeta. Su gruesa capa de grasa y su pelaje blanco los protegen del frío extremo. Son excelentes nadadores y se alimentan principalmente de focas. El deshielo provocado por el cambio climático está reduciendo el hábitat del hielo marino que necesitan para cazar, por lo que están en peligro de extinción.",
+      "questions": [
+        {
+          "q": "¿Dónde viven los osos polares?",
+          "correct": "En el Ártico",
+          "wrong": [
+            "En la Antártida",
+            "En Siberia",
+            "En Groenlandia solamente"
+          ]
+        },
+        {
+          "q": "¿De qué se alimentan principalmente los osos polares?",
+          "correct": "De focas",
+          "wrong": [
+            "De peces pequeños",
+            "De algas marinas",
+            "De pingüinos"
+          ]
+        },
+        {
+          "q": "¿Qué amenaza el hábitat del oso polar?",
+          "correct": "El deshielo por el cambio climático",
+          "wrong": [
+            "La caza excesiva de focas",
+            "El aumento de tormentas",
+            "La contaminación del agua"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🎨 El arte rupestre",
+      "text": "El arte rupestre son pinturas y grabados realizados por nuestros antepasados en paredes de cuevas y rocas. Los más famosos se encuentran en las cuevas de Altamira (España) y Lascaux (Francia), con más de 15.000 años de antigüedad. Los primeros humanos pintaban animales como bisontes, caballos y mamuts usando pigmentos naturales como el ocre y el carbón. Estas pinturas son una ventana única al modo de vida de nuestros ancestros.",
+      "questions": [
+        {
+          "q": "¿Qué es el arte rupestre?",
+          "correct": "Pinturas y grabados en cuevas y rocas hechos por humanos prehistóricos",
+          "wrong": [
+            "Esculturas de piedra en museos",
+            "Pinturas en papiro egipcio",
+            "Dibujos en vasijas de barro"
+          ]
+        },
+        {
+          "q": "¿Qué pigmentos usaban los primeros humanos para pintar?",
+          "correct": "Ocre y carbón",
+          "wrong": [
+            "Pintura al óleo",
+            "Tinta de calamar",
+            "Barro y agua"
+          ]
+        },
+        {
+          "q": "¿Qué animales aparecen frecuentemente en las pinturas rupestres?",
+          "correct": "Bisontes, caballos y mamuts",
+          "wrong": [
+            "Leones y tigres",
+            "Delfines y ballenas",
+            "Aves y peces"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🌾 La agricultura",
+      "text": "La agricultura es la actividad de cultivar la tierra para obtener alimentos. Comenzó hace unos 10.000 años cuando los humanos dejaron de ser nómadas y se asentaron para cultivar plantas como el trigo, el arroz y el maíz. Gracias a la agricultura pudieron surgir las primeras ciudades. Hoy en día, la agricultura moderna usa maquinaria, fertilizantes y técnicas de riego para alimentar a millones de personas en todo el mundo.",
+      "questions": [
+        {
+          "q": "¿Hace cuánto tiempo comenzó la agricultura?",
+          "correct": "Hace unos 10.000 años",
+          "wrong": [
+            "Hace 500 años",
+            "Hace 1 millón de años",
+            "Hace 2.000 años"
+          ]
+        },
+        {
+          "q": "¿Cuál fue uno de los primeros cultivos del ser humano?",
+          "correct": "El trigo",
+          "wrong": [
+            "La patata",
+            "El tomate",
+            "El café"
+          ]
+        },
+        {
+          "q": "¿Qué permitió el nacimiento de la agricultura?",
+          "correct": "El surgimiento de las primeras ciudades",
+          "wrong": [
+            "La aparición del fuego",
+            "El desarrollo de la escritura",
+            "La invención de la rueda"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🔭 Galileo Galilei",
+      "text": "Galileo Galilei fue un científico italiano que vivió entre los siglos XVI y XVII. Mejoró el telescopio y lo usó para observar el cielo, descubriendo que Júpiter tiene lunas y que la Vía Láctea está formada por millones de estrellas. Defendió la teoría de que la Tierra gira alrededor del Sol (heliocentrismo), lo que le causó graves problemas con la Iglesia de su época. Es considerado uno de los padres de la ciencia moderna.",
+      "questions": [
+        {
+          "q": "¿Qué instrumento mejoró Galileo para observar el cielo?",
+          "correct": "El telescopio",
+          "wrong": [
+            "El microscopio",
+            "El sextante",
+            "El astrolabio"
+          ]
+        },
+        {
+          "q": "¿Qué teoría defendió Galileo que le causó problemas?",
+          "correct": "Que la Tierra gira alrededor del Sol",
+          "wrong": [
+            "Que la Tierra es plana",
+            "Que la Luna tiene agua",
+            "Que el Sol gira alrededor de la Tierra"
+          ]
+        },
+        {
+          "q": "¿Qué descubrió Galileo sobre Júpiter?",
+          "correct": "Que tiene lunas",
+          "wrong": [
+            "Que tiene anillos",
+            "Que está hecho de gas",
+            "Que es el planeta más grande"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "💧 El ciclo del agua",
+      "text": "El agua de la Tierra sigue un ciclo continuo. El calor del Sol evapora el agua de los océanos, lagos y ríos. El vapor sube a la atmósfera, se enfría y forma nubes mediante un proceso llamado condensación. Cuando las gotas en las nubes se vuelven suficientemente pesadas, caen en forma de lluvia, nieve o granizo (precipitación). El agua regresa así a ríos, lagos y mares, y el ciclo vuelve a empezar.",
+      "questions": [
+        {
+          "q": "¿Cómo se llama el proceso en que el vapor de agua forma nubes?",
+          "correct": "Condensación",
+          "wrong": [
+            "Evaporación",
+            "Precipitación",
+            "Infiltración"
+          ]
+        },
+        {
+          "q": "¿Qué provoca que el agua se evapore?",
+          "correct": "El calor del Sol",
+          "wrong": [
+            "El viento",
+            "La gravedad",
+            "La luna llena"
+          ]
+        },
+        {
+          "q": "¿Cuál es el nombre del proceso por el que el agua cae en forma de lluvia o nieve?",
+          "correct": "Precipitación",
+          "wrong": [
+            "Condensación",
+            "Evaporación",
+            "Filtración"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🦈 Los tiburones",
+      "text": "Los tiburones son peces que llevan más de 400 millones de años en los océanos, mucho antes que los dinosaurios. Hay más de 500 especies distintas; la mayoría no es peligrosa para los humanos. Son depredadores que mantienen el equilibrio en los ecosistemas marinos. En lugar de huesos, tienen un esqueleto de cartílago. Sus dientes se renuevan constantemente: pueden perder y regenerar miles a lo largo de su vida.",
+      "questions": [
+        {
+          "q": "¿Cuánto tiempo llevan los tiburones en los océanos?",
+          "correct": "Más de 400 millones de años",
+          "wrong": [
+            "Unos 65 millones de años",
+            "Unos 10.000 años",
+            "Más de 1.000 millones de años"
+          ]
+        },
+        {
+          "q": "¿De qué está hecho el esqueleto de los tiburones?",
+          "correct": "De cartílago",
+          "wrong": [
+            "De hueso",
+            "De escamas",
+            "De quitina"
+          ]
+        },
+        {
+          "q": "¿Cuántas especies de tiburones existen?",
+          "correct": "Más de 500",
+          "wrong": [
+            "Unas 50",
+            "Unas 10",
+            "Más de 2.000"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🎵 La música",
+      "text": "La música es un arte que combina sonidos y silencios para crear melodías y ritmos. Existe en todas las culturas del mundo desde tiempos prehistóricos. Los instrumentos musicales se dividen en tres grandes grupos: instrumentos de cuerda (guitarra, violín), de viento (flauta, trompeta) y de percusión (tambor, xilófono). Escuchar música tiene beneficios para el cerebro: mejora la memoria, reduce el estrés y estimula la creatividad.",
+      "questions": [
+        {
+          "q": "¿A qué grupo pertenece la guitarra?",
+          "correct": "Instrumentos de cuerda",
+          "wrong": [
+            "Instrumentos de viento",
+            "Instrumentos de percusión",
+            "Instrumentos electrónicos"
+          ]
+        },
+        {
+          "q": "¿A qué grupo pertenece la flauta?",
+          "correct": "Instrumentos de viento",
+          "wrong": [
+            "Instrumentos de cuerda",
+            "Instrumentos de percusión",
+            "Instrumentos de tecla"
+          ]
+        },
+        {
+          "q": "¿Cuál de estos es un beneficio de escuchar música?",
+          "correct": "Mejora la memoria y reduce el estrés",
+          "wrong": [
+            "Mejora la vista",
+            "Fortalece los huesos",
+            "Aumenta la velocidad"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🚀 La conquista del espacio",
+      "text": "El 12 de abril de 1961 el astronauta soviético Yuri Gagarin se convirtió en el primer ser humano en viajar al espacio. Ocho años después, en 1969, los estadounidenses Neil Armstrong y Buzz Aldrin pisaron la Luna por primera vez. Desde entonces, la exploración espacial ha avanzado mucho: se han enviado sondas a Marte, a Júpiter y más allá. La Estación Espacial Internacional (ISS) orbita la Tierra desde 1998 con astronautas de distintos países.",
+      "questions": [
+        {
+          "q": "¿Quién fue el primer humano en viajar al espacio?",
+          "correct": "Yuri Gagarin",
+          "wrong": [
+            "Neil Armstrong",
+            "Buzz Aldrin",
+            "John Glenn"
+          ]
+        },
+        {
+          "q": "¿En qué año los humanos pisaron la Luna por primera vez?",
+          "correct": "1969",
+          "wrong": [
+            "1961",
+            "1975",
+            "1981"
+          ]
+        },
+        {
+          "q": "¿Desde qué año orbita la Tierra la Estación Espacial Internacional?",
+          "correct": "1998",
+          "wrong": [
+            "1969",
+            "2001",
+            "2010"
+          ]
         }
       ]
     }

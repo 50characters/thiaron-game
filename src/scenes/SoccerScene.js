@@ -25,6 +25,7 @@ class SoccerScene extends Phaser.Scene {
         this.shotsLeft = this.shots;
         this.goals = 0;
         this.shooting = false;
+        this.hardMode = GameState.ageGroup === '8-10';
 
         GameState.soccerBalls = 0; // consume all balls
 
@@ -224,7 +225,9 @@ class SoccerScene extends Phaser.Scene {
         // Random target: occasionally large dives, mostly small shifts
         const targets = [-80, -55, -30, 0, 30, 55, 80];
         const target = Phaser.Utils.Array.GetRandom(targets);
-        const duration = Phaser.Math.Between(300, 750);
+
+        // Age group '8-10' → faster, less predictable goalkeeper
+        const duration = this.hardMode ? Phaser.Math.Between(150, 400) : Phaser.Math.Between(300, 750);
 
         this.gkTween = this.tweens.add({
             targets: this.gkGraphics,
@@ -233,7 +236,7 @@ class SoccerScene extends Phaser.Scene {
             ease: 'Sine.easeInOut',
             onComplete: () => {
                 if (!this.shooting && this.scene.isActive()) {
-                    const pause = Phaser.Math.Between(80, 450);
+                    const pause = this.hardMode ? Phaser.Math.Between(20, 150) : Phaser.Math.Between(80, 450);
                     this.gkTimer = this.time.delayedCall(pause, () => this._gkMoveLoop());
                 }
             }

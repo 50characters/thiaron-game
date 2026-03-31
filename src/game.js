@@ -25,6 +25,7 @@ const config = {
         WordsScene,
         EnglishScene,
         MathScene,
+        MathMemoryScene,
         ReadingScene
     ]
 };

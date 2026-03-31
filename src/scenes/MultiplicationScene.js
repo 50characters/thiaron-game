@@ -102,7 +102,7 @@ class MultiplicationScene extends Phaser.Scene {
 
         const btnW = Math.min(W * 0.38, 200);
         const btnH = Math.floor(H * 0.105);
-        const startX = W / 2 - btnW / 2 - 14;
+        const startX = W / 2 - btnW - 14;
         const startY = H * 0.54;
 
         choices.forEach((val, i) => {

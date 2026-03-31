@@ -149,7 +149,7 @@ class EnglishScene extends Phaser.Scene {
         // Answer buttons
         const btnW = Math.min(W * 0.38, 200);
         const btnH = Math.floor(H * 0.1);
-        const sx = W / 2 - btnW / 2 - 10;
+        const sx = W / 2 - btnW - 10;
         const sy = H * 0.64;
 
         choices.forEach((word, i) => {

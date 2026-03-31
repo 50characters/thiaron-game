@@ -296,7 +296,7 @@ class AlphabetScene extends Phaser.Scene {
         // Answer buttons
         const btnW = Math.min(W * 0.35, 170);
         const btnH = Math.floor(H * 0.1);
-        const startX = W / 2 - btnW / 2 - 10;
+        const startX = W / 2 - btnW - 10;
         const startY = H * 0.66;
 
         choices.forEach((letter, i) => {

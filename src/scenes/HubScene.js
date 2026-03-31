@@ -15,6 +15,9 @@ class HubScene extends Phaser.Scene {
         const W = this.scale.width;
         const H = this.scale.height;
 
+        // Persist current state (balls earned, score) every time the hub is entered.
+        GameState.save();
+
         this._drawBackground(W, H);
 
         // Header bar

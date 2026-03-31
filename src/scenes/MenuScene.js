@@ -58,6 +58,7 @@ class MenuScene extends Phaser.Scene {
             this._makeButton(W / 2, y, btnW, btnH, g.emoji + '  ' + g.label, g.color, g.hover, () => {
                 GameState.ageGroup = g.key;
                 GameState.resetGame();
+                GameState.save();
                 this.cameras.main.fade(300, 0, 0, 0);
                 this.time.delayedCall(300, () => this.scene.start('HubScene'));
             });
@@ -69,6 +70,13 @@ class MenuScene extends Phaser.Scene {
             fontFamily: 'Arial, sans-serif',
             color: '#bdc3c7'
         }).setOrigin(0.5);
+
+        // Version label
+        this.add.text(W - 8, H - 8, 'v' + APP_VERSION, {
+            fontSize: Math.floor(H * 0.022) + 'px',
+            fontFamily: 'Arial, sans-serif',
+            color: '#7f8c8d'
+        }).setOrigin(1, 1);
 
         this.cameras.main.fadeIn(400);
     }

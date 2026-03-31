@@ -4,12 +4,13 @@
  * Mechanic:
  *   • Player has GameState.soccerBalls shots (capped at 9).
  *   • A basketball slides right ↔ left automatically below the hoop.
- *   • Tap / click the ball to shoot — direction is determined by the ball's
- *     current X position (left / centre / right zone).
- *   • The defender roams continuously with random patterns; its zone when
- *     the ball is thrown decides the outcome.
- *   • Shot zone ≠ defender zone → BASKET! 🏀
- *   • Shot zone == defender zone → BLOCKED! 🙌
+ *   • Tap / click the ball to shoot — a basket only counts when the ball is
+ *     in the centre zone (aligned with the hoop) when tapped.
+ *   • The defender roams continuously with random patterns; if it is in the
+ *     centre zone when the ball is thrown the shot is blocked.
+ *   • Shot zone = centre AND defender NOT at centre → BASKET! 🏀
+ *   • Shot zone ≠ centre (left or right)             → MISS (wide of hoop)
+ *   • Shot zone = centre AND defender at centre      → BLOCKED! 🙌
  *   • After all shots are used, show a summary and return to HubScene.
  */
 class BasketballScene extends Phaser.Scene {
@@ -349,15 +350,17 @@ class BasketballScene extends Phaser.Scene {
         else if (relPos > 0.67) playerDir = 'right';
         else                    playerDir = 'center';
 
-        // In youngMode there is no defender — every shot is a basket
-        let isBasket = true;
+        // A basket only scores when the ball passes through the centre (where the hoop is)
+        let isBasket = (playerDir === 'center');
+        let isBlocked = false;
         if (!this.youngMode) {
             const defX = this.defGraphics.x;
             let defDir;
             if      (defX < -25) defDir = 'left';
             else if (defX >  25) defDir = 'right';
             else                 defDir = 'center';
-            isBasket = playerDir !== defDir;
+            // Also blocked when the defender is guarding the centre
+            if (defDir === 'center') { isBasket = false; isBlocked = true; }
             this._animateDefenderReaction(defDir);
         }
         this._animateBall(playerDir, isBasket);
@@ -366,8 +369,10 @@ class BasketballScene extends Phaser.Scene {
             if (isBasket) {
                 this.baskets++;
                 this.resultTxt.setText('🏀 ¡CANASTA!').setColor('#FFD700');
-            } else {
+            } else if (isBlocked) {
                 this.resultTxt.setText('🙌 ¡Bloqueado!').setColor('#e74c3c');
+            } else {
+                this.resultTxt.setText('💨 ¡Fallado!').setColor('#e74c3c');
             }
 
             this.tweens.add({

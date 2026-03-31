@@ -67,7 +67,9 @@ class BasketballScene extends Phaser.Scene {
 
         // Three-point arc (partial, from above)
         g.lineStyle(4, 0xffffff, 0.6);
-        g.strokeArc(W / 2, H * 0.55, W * 0.38, 0, Math.PI, false);
+        g.beginPath();
+        g.arc(W / 2, H * 0.55, W * 0.38, 0, Math.PI, false);
+        g.strokePath();
 
         // Free throw lane rectangle
         const laneW = W * 0.36;
@@ -248,6 +250,12 @@ class BasketballScene extends Phaser.Scene {
             fontFamily: 'Arial, sans-serif',
             color: '#bdc3c7'
         }).setOrigin(0.5);
+
+        // Back button
+        this._makeSmallButton(55, H - 30, 90, 40, '← Salir', 0x555555, 0x333333, () => {
+            this.cameras.main.fade(300, 0, 0, 0);
+            this.time.delayedCall(300, () => this.scene.start('HubScene'));
+        });
     }
 
     _shotsStr() {

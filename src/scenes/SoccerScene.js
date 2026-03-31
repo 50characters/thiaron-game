@@ -1,13 +1,16 @@
 /**
- * SoccerScene — Mini-game: use earned soccer balls to shoot at the goalkeeper.
+ * SoccerScene — Mini-game: touch the moving ball to shoot it at the goalkeeper.
  *
  * Mechanic:
- *   • Player has GameState.soccerBalls shots (capped at displayed shots).
- *   • Each shot: click LEFT | CENTER | RIGHT.
- *   • Goalkeeper randomly dives to one direction.
- *   • Shot != goalkeeper direction → GOAL! ⚽
- *   • Shot == goalkeeper direction → SAVED! 🧤
- *   • After all shots used, show summary and return to HubScene.
+ *   • Player has GameState.soccerBalls shots (capped at 9).
+ *   • A soccer ball slides right ↔ left automatically across the penalty area.
+ *   • Tap / click the ball to shoot — direction is determined by the ball's
+ *     current X position in the goal (left / centre / right zone).
+ *   • The goalkeeper roams continuously with random patterns; its zone when
+ *     the ball is kicked decides the outcome.
+ *   • Shot zone ≠ goalkeeper zone → GOAL! ⚽
+ *   • Shot zone == goalkeeper zone → SAVED! 🧤
+ *   • After all shots are used, show a summary and return to HubScene.
  */
 class SoccerScene extends Phaser.Scene {
     constructor() {
@@ -29,7 +32,9 @@ class SoccerScene extends Phaser.Scene {
         this._drawGoal();
         this._drawGoalkeeper();
         this._drawUI();
-        this._drawShootButtons();
+
+        this._startGoalkeeperMovement();
+        this._spawnBall();
 
         this.cameras.main.fadeIn(400);
     }
@@ -186,84 +191,119 @@ class SoccerScene extends Phaser.Scene {
             stroke: '#000',
             strokeThickness: 5
         }).setOrigin(0.5).setDepth(5);
-    }
-
-    _shotsStr() {
-        return '🟡'.repeat(this.shotsLeft) + '⚫'.repeat(this.shots - this.shotsLeft);
-    }
-
-    _drawShootButtons() {
-        const W = this.W, H = this.H;
-        const btnW = Math.min(W * 0.25, 160);
-        const btnH = Math.floor(H * 0.1);
-        const y = H * 0.79;
-        const positions = [
-            { label: '← Izquierda', dir: 'left',   x: W * 0.2,  color: 0xe74c3c, hover: 0xc0392b },
-            { label: 'Centro',      dir: 'center', x: W * 0.5,  color: 0x8e44ad, hover: 0x6c3483 },
-            { label: 'Derecha →',   dir: 'right',  x: W * 0.8,  color: 0x2980b9, hover: 0x1a5276 }
-        ];
-
-        this.shootBtns = [];
-
-        positions.forEach(p => {
-            const bg = this.add.graphics();
-            const r = 14;
-
-            const draw = (c, en) => {
-                bg.clear();
-                if (en) {
-                    bg.fillStyle(0x000000, 0.2);
-                    bg.fillRoundedRect(p.x - btnW / 2 + 3, y - btnH / 2 + 4, btnW, btnH, r);
-                }
-                bg.fillStyle(en ? c : 0x555555, en ? 1 : 0.5);
-                bg.fillRoundedRect(p.x - btnW / 2, y - btnH / 2, btnW, btnH, r);
-                bg.lineStyle(2, 0xffffff, en ? 0.5 : 0.2);
-                bg.strokeRoundedRect(p.x - btnW / 2, y - btnH / 2, btnW, btnH, r);
-            };
-            draw(p.color, true);
-
-            const txt = this.add.text(p.x, y, p.label, {
-                fontSize: Math.floor(btnH * 0.3) + 'px',
-                fontFamily: 'Arial Rounded MT Bold, Arial',
-                color: '#fff',
-                stroke: '#000',
-                strokeThickness: 2
-            }).setOrigin(0.5);
-
-            const zone = this.add.zone(p.x, y, btnW, btnH).setInteractive({ useHandCursor: true });
-            zone.on('pointerover', () => { if (!this.shooting) draw(p.hover, true); });
-            zone.on('pointerout',  () => { if (!this.shooting) draw(p.color, true); });
-            zone.on('pointerdown',   () => { if (!this.shooting) this._shoot(p.dir, draw, p.color); });
-
-            this.shootBtns.push({ draw, color: p.color, zone, txt });
-        });
 
         // Instruction
-        this.add.text(W / 2, H * 0.92, '¡Elige la dirección del disparo!', {
+        this.add.text(W / 2, H * 0.92, '¡Toca el balón para disparar!', {
             fontSize: Math.floor(H * 0.028) + 'px',
             fontFamily: 'Arial, sans-serif',
             color: '#bdc3c7'
         }).setOrigin(0.5);
     }
 
-    _shoot(playerDir, draw, color) {
+    _shotsStr() {
+        return '🟡'.repeat(this.shotsLeft) + '⚫'.repeat(this.shots - this.shotsLeft);
+    }
+
+    // ─── Goalkeeper continuous movement ──────────────────────────────────────
+
+    _startGoalkeeperMovement() {
+        this.gkTween = null;
+        this.gkTimer = null;
+        this._gkMoveLoop();
+    }
+
+    _gkMoveLoop() {
+        if (this.shooting || !this.scene.isActive()) return;
+
+        // Random target: occasionally large dives, mostly small shifts
+        const targets = [-80, -55, -30, 0, 30, 55, 80];
+        const target = Phaser.Utils.Array.GetRandom(targets);
+        const duration = Phaser.Math.Between(300, 750);
+
+        this.gkTween = this.tweens.add({
+            targets: this.gkGraphics,
+            x: target,
+            duration: duration,
+            ease: 'Sine.easeInOut',
+            onComplete: () => {
+                if (!this.shooting && this.scene.isActive()) {
+                    const pause = Phaser.Math.Between(80, 450);
+                    this.gkTimer = this.time.delayedCall(pause, () => this._gkMoveLoop());
+                }
+            }
+        });
+    }
+
+    _stopGoalkeeperMovement() {
+        if (this.gkTimer) { this.gkTimer.remove(false); this.gkTimer = null; }
+        if (this.gkTween) { this.gkTween.stop(); this.gkTween = null; }
+    }
+
+    // ─── Ball spawning and shooting ──────────────────────────────────────────
+
+    _spawnBall() {
+        const W = this.W, H = this.H;
+        const { x: gx, w: gw } = this.goalBounds;
+
+        if (this.ball) { this.ball.destroy(); this.ball = null; }
+        if (this.ballTween) { this.ballTween.stop(); this.ballTween = null; }
+
+        const leftX  = gx + gw * 0.1;
+        const rightX = gx + gw * 0.9;
+        const ballY  = H * 0.78;
+
+        // Ball starts from the right and slides left first
+        this.ball = this.add.text(rightX, ballY, '⚽', {
+            fontSize: '36px'
+        }).setOrigin(0.5).setDepth(4).setInteractive({ useHandCursor: true });
+
+        this.ball.on('pointerdown', () => this._kickBall());
+
+        // Bouncing tween: right → left → right → …
+        this.ballTween = this.tweens.add({
+            targets: this.ball,
+            x: leftX,
+            duration: 1300,
+            ease: 'Sine.easeInOut',
+            yoyo: true,
+            repeat: -1
+        });
+    }
+
+    _kickBall() {
         if (this.shotsLeft <= 0 || this.shooting) return;
         this.shooting = true;
 
-        const dirs = ['left', 'center', 'right'];
-        const gkDir = Phaser.Utils.Array.GetRandom(dirs);
+        // Freeze the ball and the goalkeeper
+        this.ballTween.stop();
+        this.ball.disableInteractive();
+        this._stopGoalkeeperMovement();
+
+        // Determine shot direction from ball's X position within the goal
+        const { x: gx, w: gw } = this.goalBounds;
+        const relPos = (this.ball.x - gx) / gw;
+
+        let playerDir;
+        if      (relPos < 0.33) playerDir = 'left';
+        else if (relPos > 0.67) playerDir = 'right';
+        else                    playerDir = 'center';
+
+        // Determine goalkeeper zone from its current horizontal offset
+        const gkX = this.gkGraphics.x;
+        let gkDir;
+        if      (gkX < -25) gkDir = 'left';
+        else if (gkX >  25) gkDir = 'right';
+        else                gkDir = 'center';
+
         const isGoal = playerDir !== gkDir;
 
-        // Disable buttons during animation
-        this.shootBtns.forEach(b => b.zone.disableInteractive());
+        // Animate goalkeeper reaction dive
+        this._animateGoalkeeperReaction(gkDir);
 
-        // Goalkeeper dive animation
-        this._animateGoalkeeper(gkDir);
-
-        // Animate ball
+        // Animate ball flying to goal
         this._animateBall(playerDir, isGoal);
 
-        // Show result
+        // Show result after short delay
         this.time.delayedCall(700, () => {
             if (isGoal) {
                 this.goals++;
@@ -301,30 +341,20 @@ class SoccerScene extends Phaser.Scene {
                     this.time.delayedCall(300, () => this._showSummary());
                 } else {
                     this.shooting = false;
-                    this.shootBtns.forEach(b => {
-                        b.zone.setInteractive({ useHandCursor: true });
-                        b.draw(b.color, true);
-                    });
+                    this._startGoalkeeperMovement();
+                    this._spawnBall();
                 }
             });
         });
     }
 
     _animateBall(dir, isGoal) {
-        const W = this.W, H = this.H;
         const { x: gx, y: gy, w: gw, h: gh } = this.goalBounds;
-
-        const startX = W / 2;
-        const startY = H * 0.82;
 
         const endX = dir === 'left'   ? gx + gw * 0.2
                    : dir === 'right'  ? gx + gw * 0.8
                    : gx + gw / 2;
         const endY = gy + gh * 0.5;
-
-        this.ball = this.add.text(startX, startY, '⚽', {
-            fontSize: '32px'
-        }).setOrigin(0.5).setDepth(4);
 
         this.tweens.add({
             targets: this.ball,
@@ -337,17 +367,19 @@ class SoccerScene extends Phaser.Scene {
         });
     }
 
-    _animateGoalkeeper(dir) {
-        const { cx, cy } = this.gkBase;
-        const dx = dir === 'left' ? -80 : dir === 'right' ? 80 : 0;
-        const dy = dir === 'center' ? 0 : 20;
+    _animateGoalkeeperReaction(currentDir) {
+        // Goalkeeper snaps to the extreme of its current zone
+        const targetX = currentDir === 'left'  ? -85
+                      : currentDir === 'right' ?  85
+                      : 0;
+        const targetY = currentDir === 'center' ? 0 : 18;
 
         this.tweens.add({
             targets: this.gkGraphics,
-            x: dx,
-            y: dy,
-            duration: 550,
-            ease: 'Power2'
+            x: targetX,
+            y: targetY,
+            duration: 400,
+            ease: 'Power3'
         });
     }
 

@@ -15,7 +15,7 @@ class MathScene extends Phaser.Scene {
         this.H = this.scale.height;
 
         this.score = 0;
-        this.streak = 0;
+        this.streak = GameState.consecutiveCorrect || 0;
         this.round = 0;
         this.totalRounds = 12;
         this.maxNum = GameState.mathMax();
@@ -50,6 +50,7 @@ class MathScene extends Phaser.Scene {
         }).setOrigin(0.5);
 
         this._makeSmallButton(55, H - 30, 90, 40, '← Salir', 0x555555, 0x333333, () => {
+            GameState.consecutiveCorrect = this.streak;
             this.cameras.main.fade(300, 0, 0, 0);
             this.time.delayedCall(300, () => this.scene.start('HubScene'));
         });
@@ -75,6 +76,16 @@ class MathScene extends Phaser.Scene {
             padding: { x: 8, y: 4 }
         }).setOrigin(1, 0));
 
+        // Soccer balls counter
+        const ballStr = '⚽'.repeat(Math.max(0, GameState.soccerBalls));
+        this._qGroup.add(this.add.text(12, 8, ballStr || '—', {
+            fontSize: Math.floor(H * 0.032) + 'px',
+            fontFamily: 'Arial, sans-serif',
+            color: '#fff',
+            backgroundColor: '#27ae60',
+            padding: { x: 8, y: 4 }
+        }).setOrigin(0, 0));
+
         // Progress
         this._qGroup.add(this.add.text(W / 2, H * 0.17, 'Ronda ' + (this.round + 1) + ' / ' + this.totalRounds, {
             fontSize: Math.floor(H * 0.028) + 'px', color: '#bdc3c7'
@@ -82,7 +93,7 @@ class MathScene extends Phaser.Scene {
 
         // Streak flame
         if (this.streak >= 3) {
-            this._qGroup.add(this.add.text(12, 8, '🔥 ×' + this.streak, {
+            this._qGroup.add(this.add.text(12, H * 0.135, '🔥 ×' + this.streak, {
                 fontSize: Math.floor(H * 0.032) + 'px', color: '#ff6b35',
                 backgroundColor: '#2c0000', padding: { x: 8, y: 4 }
             }).setOrigin(0, 0));
@@ -138,6 +149,47 @@ class MathScene extends Phaser.Scene {
             const bx = sx + col * (btnW + 20) + btnW / 2;
             const by = sy + row * (btnH + 14) + btnH / 2;
             this._makeAnswerButton(bx, by, btnW, btnH, val, val === answer);
+        });
+
+        // Streak indicator (3 dots → 1 ball)
+        const streakDots = [];
+        for (let i = 0; i < 3; i++) {
+            streakDots.push(i < (this.streak % 3) ? '🟢' : '⚪');
+        }
+        this._qGroup.add(this.add.text(W / 2, H * 0.895, streakDots.join(' '), {
+            fontSize: Math.floor(H * 0.038) + 'px'
+        }).setOrigin(0.5));
+        this._qGroup.add(this.add.text(W / 2, H * 0.944, '3 seguidos = 1 balón ⚽', {
+            fontSize: Math.floor(H * 0.028) + 'px',
+            fontFamily: 'Arial, sans-serif',
+            color: '#bdc3c7'
+        }).setOrigin(0.5));
+    }
+
+    _showBallReward() {
+        const W = this.W, H = this.H;
+        const panel = this.add.text(W / 2, H * 0.5, '⚽ ¡Ganaste un balón!', {
+            fontSize: Math.floor(H * 0.055) + 'px',
+            fontFamily: 'Arial Rounded MT Bold, Arial',
+            color: '#FFD700',
+            stroke: '#000',
+            strokeThickness: 4,
+            backgroundColor: '#16213e',
+            padding: { x: 16, y: 10 }
+        }).setOrigin(0.5).setDepth(10);
+
+        this.tweens.add({
+            targets: panel,
+            scaleX: { from: 0.5, to: 1 },
+            scaleY: { from: 0.5, to: 1 },
+            alpha: { from: 0, to: 1 },
+            duration: 400,
+            ease: 'Back.Out',
+            onComplete: () => {
+                this.time.delayedCall(800, () => {
+                    this.tweens.add({ targets: panel, alpha: 0, duration: 400, onComplete: () => panel.destroy() });
+                });
+            }
         });
     }
 
@@ -258,9 +310,15 @@ class MathScene extends Phaser.Scene {
                     fontSize: Math.floor(h * 0.44) + 'px', color: '#2ecc71'
                 }).setOrigin(0.5);
                 this.tweens.add({ targets: bonus, y: y - 80, alpha: 0, duration: 800, onComplete: () => bonus.destroy() });
+                if (this.streak > 0 && this.streak % 3 === 0) {
+                    GameState.soccerBalls++;
+                    this._showBallReward();
+                }
+                GameState.consecutiveCorrect = this.streak;
             } else {
                 draw(0xe74c3c);
                 this.streak = 0;
+                GameState.consecutiveCorrect = 0;
                 const hint = this.add.text(this.W / 2, this.H * 0.87, 'La respuesta era: ' + this._correctAnswer, {
                     fontSize: Math.floor(h * 0.36) + 'px',
                     color: '#FFD700',

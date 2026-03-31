@@ -3,9 +3,9 @@
  */
 const GameState = {
     ageGroup: null,        // '4-5' | '6-7' | '8-10'
-    soccerBalls: 0,        // balls earned from multiplication game
+    soccerBalls: 0,        // balls earned from any math game
     totalScore: 0,
-    consecutiveCorrect: 0, // streak for multiplication game
+    consecutiveCorrect: 0, // streak across any math game
 
     /** Reset per-game values (keep ageGroup). */
     resetGame() {

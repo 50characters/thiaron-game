@@ -84,7 +84,7 @@ class HubScene extends Phaser.Scene {
 
     _drawBallCounter(W, H) {
         if (GameState.soccerBalls <= 0) return;
-        const txt = this.add.text(20, 10, '⚽ × ' + GameState.soccerBalls, {
+        this.add.text(20, 10, '🏅 × ' + GameState.soccerBalls, {
             fontSize: Math.floor(H * 0.035) + 'px',
             fontFamily: 'Arial Rounded MT Bold, Arial',
             color: '#ffffff',
@@ -93,12 +93,27 @@ class HubScene extends Phaser.Scene {
         });
 
         if (GameState.soccerBalls >= 3) {
-            // Prompt to play soccer
-            const bw = W * 0.55;
+            // Sport selection label
+            this.add.text(W / 2, H * 0.8, '⚡ ¡Elige tu deporte!', {
+                fontSize: Math.floor(H * 0.032) + 'px',
+                fontFamily: 'Arial Rounded MT Bold, Arial',
+                color: '#FFD700',
+                stroke: '#000',
+                strokeThickness: 2
+            }).setOrigin(0.5);
+
+            // Soccer button (left half)
+            const bw = W * 0.42;
             const bh = H * 0.075;
-            this._makeGameButton(W / 2, H * 0.88, bw, bh, '⚽', '¡Jugar al Fútbol!', 0x27ae60, 0x1e8449, () => {
+            this._makeGameButton(W * 0.28, H * 0.9, bw, bh, '⚽', 'Fútbol', 0x27ae60, 0x1e8449, () => {
                 this.cameras.main.fade(300, 0, 0, 0);
                 this.time.delayedCall(300, () => this.scene.start('SoccerScene'));
+            });
+
+            // Basketball button (right half)
+            this._makeGameButton(W * 0.72, H * 0.9, bw, bh, '🏀', 'Baloncesto', 0xe67e22, 0xc05800, () => {
+                this.cameras.main.fade(300, 0, 0, 0);
+                this.time.delayedCall(300, () => this.scene.start('BasketballScene'));
             });
         }
     }

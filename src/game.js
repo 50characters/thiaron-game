@@ -20,6 +20,7 @@ const config = {
         HubScene,
         MultiplicationScene,
         SoccerScene,
+        BasketballScene,
         AlphabetScene,
         WordsScene,
         EnglishScene,

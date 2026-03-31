@@ -263,7 +263,7 @@ class SoccerScene extends Phaser.Scene {
 
         // Ball starts from the right and slides left first
         this.ball = this.add.text(rightX, ballY, '⚽', {
-            fontSize: '36px'
+            fontSize: '52px'
         }).setOrigin(0.5).setDepth(4).setInteractive({ useHandCursor: true });
 
         this.ball.on('pointerdown', () => this._kickBall());

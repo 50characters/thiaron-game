@@ -25,15 +25,20 @@ class BasketballScene extends Phaser.Scene {
         this.shotsLeft = this.shots;
         this.baskets = 0;
         this.shooting = false;
+        this.youngMode = GameState.ageGroup === '4-5'; // no defender + larger ball for youngest group
 
         GameState.soccerBalls = 0; // consume all balls
 
         this._drawCourt();
         this._drawHoop();
-        this._drawDefender();
+        if (!this.youngMode) {
+            this._drawDefender();
+        }
         this._drawUI();
 
-        this._startDefenderMovement();
+        if (!this.youngMode) {
+            this._startDefenderMovement();
+        }
         this._spawnBall();
 
         this.cameras.main.fadeIn(400);
@@ -310,7 +315,7 @@ class BasketballScene extends Phaser.Scene {
         const ballY  = H * 0.78;
 
         this.ball = this.add.text(rightX, ballY, '🏀', {
-            fontSize: '36px'
+            fontSize: this.youngMode ? '52px' : '36px'
         }).setOrigin(0.5).setDepth(4).setInteractive({ useHandCursor: true });
 
         this.ball.on('pointerdown', () => this._throwBall());
@@ -331,7 +336,9 @@ class BasketballScene extends Phaser.Scene {
 
         this.ballTween.stop();
         this.ball.disableInteractive();
-        this._stopDefenderMovement();
+        if (!this.youngMode) {
+            this._stopDefenderMovement();
+        }
 
         // Determine shot direction from ball's X relative to hoop width
         const { x: hx, w: hw } = this.hoopBounds;
@@ -342,16 +349,17 @@ class BasketballScene extends Phaser.Scene {
         else if (relPos > 0.67) playerDir = 'right';
         else                    playerDir = 'center';
 
-        // Determine defender zone from its current horizontal offset
-        const defX = this.defGraphics.x;
-        let defDir;
-        if      (defX < -25) defDir = 'left';
-        else if (defX >  25) defDir = 'right';
-        else                 defDir = 'center';
-
-        const isBasket = playerDir !== defDir;
-
-        this._animateDefenderReaction(defDir);
+        // In youngMode there is no defender — every shot is a basket
+        let isBasket = true;
+        if (!this.youngMode) {
+            const defX = this.defGraphics.x;
+            let defDir;
+            if      (defX < -25) defDir = 'left';
+            else if (defX >  25) defDir = 'right';
+            else                 defDir = 'center';
+            isBasket = playerDir !== defDir;
+            this._animateDefenderReaction(defDir);
+        }
         this._animateBall(playerDir, isBasket);
 
         this.time.delayedCall(700, () => {
@@ -384,14 +392,18 @@ class BasketballScene extends Phaser.Scene {
             this.basketsTxt.setText('🏀 Canastas: ' + this.baskets + ' / ' + this.shots);
 
             this.time.delayedCall(900, () => {
-                this._resetDefender();
+                if (!this.youngMode) {
+                    this._resetDefender();
+                }
                 if (this.ball) { this.ball.destroy(); this.ball = null; }
 
                 if (this.shotsLeft <= 0) {
                     this.time.delayedCall(300, () => this._showSummary());
                 } else {
                     this.shooting = false;
-                    this._startDefenderMovement();
+                    if (!this.youngMode) {
+                        this._startDefenderMovement();
+                    }
                     this._spawnBall();
                 }
             });

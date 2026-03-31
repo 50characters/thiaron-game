@@ -52,6 +52,11 @@ self.addEventListener('activate', event => {
 
 // Fetch: serve from cache, fall back to network
 self.addEventListener('fetch', event => {
+    // Always fetch version.json from the network so update checks are never stale.
+    if (event.request.url.endsWith('version.json')) {
+        event.respondWith(fetch(event.request));
+        return;
+    }
     event.respondWith(
         caches.match(event.request).then(cached => {
             if (cached) return cached;

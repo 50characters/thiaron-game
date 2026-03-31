@@ -141,7 +141,7 @@ class MathScene extends Phaser.Scene {
         const btnW = Math.min(W * 0.38, 200);
         const btnH = Math.floor(H * 0.1);
         const sy = this.showDots ? H * 0.65 : H * 0.56;
-        const sx = W / 2 - btnW / 2 - 10;
+        const sx = W / 2 - btnW - 10;
 
         choices.forEach((val, i) => {
             const col = i % 2;

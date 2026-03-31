@@ -7,9 +7,9 @@ on:
   # Allow manual trigger from the Actions tab
   workflow_dispatch:
 
-# Grant write permission to deploy to GitHub Pages
+# Grant write permission to commit the version bump and deploy to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -29,6 +29,37 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # Full history needed to push the version-bump commit
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── Version bump (skipped when this workflow itself triggered the push) ──
+      - name: Bump patch version
+        if: github.actor != 'github-actions[bot]'
+        id: bump
+        run: |
+          CURRENT=$(sed -n "s/.*APP_VERSION = '\([^']*\)'.*/\1/p" src/version.js)
+          MAJOR=$(echo "$CURRENT" | cut -d. -f1)
+          MINOR=$(echo "$CURRENT" | cut -d. -f2)
+          PATCH=$(echo "$CURRENT" | cut -d. -f3)
+          NEW_VERSION="${MAJOR}.${MINOR}.$((PATCH + 1))"
+          sed -i "s/APP_VERSION = '[^']*'/APP_VERSION = '${NEW_VERSION}'/" src/version.js
+          echo "Bumped version: ${CURRENT} → ${NEW_VERSION}"
+          echo "new_version=${NEW_VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Commit, tag and push version bump
+        if: github.actor != 'github-actions[bot]'
+        run: |
+          NEW_VERSION="${{ steps.bump.outputs.new_version }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/version.js
+          git commit -m "chore: bump version to ${NEW_VERSION} [skip ci]"
+          git tag "v${NEW_VERSION}"
+          # Retry once with rebase in case of a concurrent push race
+          git push origin HEAD:main --follow-tags || \
+            (git pull --rebase origin main && git push origin HEAD:main --follow-tags)
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

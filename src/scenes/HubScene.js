@@ -148,17 +148,30 @@ class HubScene extends Phaser.Scene {
         };
         draw(color);
 
-        const eSize = Math.floor(h * 0.42);
-        this.add.text(x - w * 0.28, y, emoji, {
+        // Emoji pinned to the left area of the button
+        const eSize   = Math.floor(h * 0.40);
+        const emojiX  = x - w / 2 + Math.floor(h * 0.50);
+        this.add.text(emojiX, y, emoji, {
             fontSize: eSize + 'px'
         }).setOrigin(0.5);
 
-        this.add.text(x + w * 0.08, y, label, {
-            fontSize: Math.floor(h * 0.33) + 'px',
+        // Label fills the remaining width to the right of the emoji.
+        // Font size is capped so text never overlaps the emoji.
+        const textAreaLeft  = x - w / 2 + Math.floor(h * 0.90);
+        const textAreaW     = w - Math.floor(h * 0.90);
+        const textCenterX   = textAreaLeft + textAreaW / 2;
+        const labelFontSize = Math.min(
+            Math.floor(h * 0.30),
+            Math.floor(textAreaW / 5.5)  // ~5.5px per character at the target font size
+        );
+        this.add.text(textCenterX, y, label, {
+            fontSize: labelFontSize + 'px',
             fontFamily: 'Arial Rounded MT Bold, Arial',
             color: '#ffffff',
             stroke: '#000',
-            strokeThickness: 2
+            strokeThickness: 2,
+            wordWrap: { width: textAreaW - 6 },
+            align: 'center'
         }).setOrigin(0.5);
 
         const zone = this.add.zone(x, y, w, h).setInteractive({ useHandCursor: true });

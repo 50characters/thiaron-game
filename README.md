@@ -57,6 +57,19 @@ npx serve .
 
 El juego también se publica automáticamente en **GitHub Pages** tras cada push a `main` mediante el workflow `.github/workflows/deploy.yml`.
 
+## 🔖 Versionado automático
+
+Con cada push a `main` el workflow de despliegue:
+
+1. Lee la versión actual de `src/version.js` (constante `APP_VERSION`).
+2. Incrementa el número de **patch** (p. ej. `1.1.0` → `1.1.1`).
+3. Guarda el cambio en `src/version.js`, hace un commit automático con el mensaje `chore: bump version to X.Y.Z [skip ci]` y crea el tag `vX.Y.Z`.
+4. Despliega en GitHub Pages con la nueva versión ya incluida.
+
+El sufijo `[skip ci]` en el mensaje de commit evita que el push del bot dispare una nueva ejecución del workflow (sin loops). Si por alguna razón el workflow se ejecuta igualmente, la condición `github.actor != 'github-actions[bot]'` impide que el paso de bump se vuelva a ejecutar.
+
+> La versión se almacena únicamente en **`src/version.js`**. `BootScene.js` la usa para detectar cambios de versión y limpiar cachés automáticamente.
+
 ## 📚 Documentación
 
 | Documento | Descripción |
@@ -73,7 +86,7 @@ sw.js                             ← Service Worker (caché offline)
 icons/                            ← Iconos PWA (192×192 y 512×512)
 .github/
   workflows/
-    deploy.yml                    ← CI/CD: publica en GitHub Pages al hacer push a main
+    deploy.yml                    ← CI/CD: bump versión patch + publica en GitHub Pages al hacer push a main
 docs/
   how-to-run.md                   ← Cómo ejecutar el juego localmente
   adding-a-new-game.md            ← Guía para añadir un nuevo juego

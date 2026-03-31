@@ -3,7 +3,7 @@
  * Caches all game assets so the game works offline once loaded.
  */
 
-const CACHE_NAME = 'thiaron-v1';
+const CACHE_NAME = 'thiaron-v2';
 
 const ASSETS = [
     './',
@@ -14,12 +14,14 @@ const ASSETS = [
     './src/css/style.css',
     './src/phaser.min.js',
     './src/GameState.js',
+    './src/version.js',
     './src/game.js',
     './src/scenes/BootScene.js',
     './src/scenes/MenuScene.js',
     './src/scenes/HubScene.js',
     './src/scenes/MultiplicationScene.js',
     './src/scenes/SoccerScene.js',
+    './src/scenes/BasketballScene.js',
     './src/scenes/AlphabetScene.js',
     './src/scenes/WordsScene.js',
     './src/scenes/EnglishScene.js',

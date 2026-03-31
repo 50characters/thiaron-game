@@ -216,22 +216,51 @@ class ReadingScene extends Phaser.Scene {
 
         this._correctAnswer = q.correct;
 
-        // answer buttons (2 × 2 grid)
+        // answer buttons (2 × 2 grid) — height adapts to wrapped text
         const choices = Phaser.Utils.Array.Shuffle([q.correct, ...q.wrong]);
-        const btnW  = Math.min(W * 0.42, 210);
-        const btnH  = Math.floor(H * 0.085);
-        const gapX  = 12;
+        const btnW  = Math.min(W * 0.44, 230);
+        const minH  = Math.floor(H * 0.085);
+        const vPad  = 14;
+        const gapX  = 10;
         const gapY  = 10;
-        const gridW = btnW * 2 + gapX;
-        const sx    = (W - gridW) / 2;
         const sy    = H * 0.715;
 
+        // Maximum height each row may occupy so the grid stays on screen
+        const maxRowH = Math.floor((H * 0.965 - sy - gapY) / 2);
+
+        // Measure each button's required height at the given font size
+        const measureHeights = (fs) => choices.map(ch => {
+            const t = this.add.text(-9999, -9999, ch, {
+                fontSize: fs + 'px',
+                fontFamily: 'Arial Rounded MT Bold, Arial',
+                wordWrap: { width: btnW - 20 },
+                align: 'center'
+            });
+            const needed = Math.max(minH, Math.ceil(t.height) + vPad * 2);
+            t.destroy();
+            return needed;
+        });
+
+        // Start at a comfortable font size (~28% of minH); shrink until everything fits
+        let fSize = Math.floor(minH * 0.28);
+        let btnHeights = measureHeights(fSize);
+        while (Math.max(...btnHeights) > maxRowH && fSize > 13) { // 13px is the minimum readable size
+            fSize--;
+            btnHeights = measureHeights(fSize);
+        }
+
+        const row0H = Math.min(maxRowH, Math.max(btnHeights[0], btnHeights[1]));
+        const row1H = Math.min(maxRowH, Math.max(btnHeights[2], btnHeights[3]));
+        const gridW = btnW * 2 + gapX;
+        const sx    = (W - gridW) / 2;
+
         choices.forEach((choice, i) => {
-            const col = i % 2;
-            const row = Math.floor(i / 2);
-            const bx  = sx + col * (btnW + gapX) + btnW / 2;
-            const by  = sy + row * (btnH + gapY) + btnH / 2;
-            this._makeAnswerButton(bx, by, btnW, btnH, choice, choice === q.correct);
+            const col  = i % 2;
+            const row  = Math.floor(i / 2);
+            const rowH = row === 0 ? row0H : row1H;
+            const bx   = sx + col * (btnW + gapX) + btnW / 2;
+            const by   = sy + (row === 0 ? row0H / 2 : row0H + gapY + row1H / 2);
+            this._makeAnswerButton(bx, by, btnW, rowH, choice, choice === q.correct, fSize);
         });
 
         // Entrance animation for the text card
@@ -245,8 +274,9 @@ class ReadingScene extends Phaser.Scene {
 
     // ─── Answer buttons ───────────────────────────────────────────────────────
 
-    _makeAnswerButton(x, y, w, h, label, isCorrect) {
-        const r  = Math.floor(h * 0.3);
+    _makeAnswerButton(x, y, w, h, label, isCorrect, fontSize) {
+        const fs = fontSize !== undefined ? fontSize : Math.floor(h * 0.30);
+        const r  = Math.floor(h * 0.25);
         const bg = this.add.graphics();
         this._mainGroup.add(bg);
 
@@ -263,12 +293,12 @@ class ReadingScene extends Phaser.Scene {
         draw(baseColor);
 
         const txt = this.add.text(x, y, label, {
-            fontSize: Math.floor(h * 0.34) + 'px',
+            fontSize: fs + 'px',
             fontFamily: 'Arial Rounded MT Bold, Arial',
             color: '#fff',
             stroke: '#000',
             strokeThickness: 2,
-            wordWrap: { width: w - 14 },
+            wordWrap: { width: w - 20 },
             align: 'center'
         }).setOrigin(0.5);
         this._mainGroup.add(txt);

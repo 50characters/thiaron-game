@@ -45,6 +45,7 @@ jobs:
           PATCH=$(echo "$CURRENT" | cut -d. -f3)
           NEW_VERSION="${MAJOR}.${MINOR}.$((PATCH + 1))"
           sed -i "s/APP_VERSION = '[^']*'/APP_VERSION = '${NEW_VERSION}'/" src/version.js
+          echo "{ \"version\": \"${NEW_VERSION}\" }" > version.json
           echo "Bumped version: ${CURRENT} → ${NEW_VERSION}"
           echo "new_version=${NEW_VERSION}" >> "$GITHUB_OUTPUT"
 
@@ -54,7 +55,7 @@ jobs:
           NEW_VERSION="${{ steps.bump.outputs.new_version }}"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/version.js
+          git add src/version.js version.json
           git commit -m "chore: bump version to ${NEW_VERSION} [skip ci]"
           git tag "v${NEW_VERSION}"
           # Retry once with rebase in case of a concurrent push race

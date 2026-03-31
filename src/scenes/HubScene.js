@@ -4,7 +4,7 @@
  * Available games per age group:
  *   4-5  : Alphabet, Words (Spanish), Math (addition ≤10)
  *   6-7  : Alphabet, Words (Spanish), Math (±20), Multiplication
- *   8-10 : Words (Spanish), Math (±100), Multiplication, English Words
+ *   8-10 : Math (±100), Multiplication, English Words, Reading
  */
 class HubScene extends Phaser.Scene {
     constructor() {
@@ -45,10 +45,11 @@ class HubScene extends Phaser.Scene {
         // Game definitions
         const allGames = [
             { key: 'AlphabetScene',      label: 'Abecedario',    emoji: '🔤', color: 0xe67e22, hover: 0xd35400, ages: ['4-5', '6-7'] },
-            { key: 'WordsScene',         label: 'Palabras',      emoji: '📖', color: 0x8e44ad, hover: 0x6c3483, ages: ['4-5', '6-7', '8-10'] },
+            { key: 'WordsScene',         label: 'Palabras',      emoji: '📖', color: 0x8e44ad, hover: 0x6c3483, ages: ['4-5', '6-7'] },
             { key: 'MathScene',          label: 'Matemáticas',   emoji: '➕', color: 0x16a085, hover: 0x0e6655, ages: ['4-5', '6-7', '8-10'] },
             { key: 'MultiplicationScene',label: 'Tablas',        emoji: '✖️', color: 0xe74c3c, hover: 0xc0392b, ages: ['6-7', '8-10'] },
-            { key: 'EnglishScene',       label: 'Inglés',        emoji: '🇬🇧', color: 0x2980b9, hover: 0x1a5276, ages: ['8-10'] }
+            { key: 'EnglishScene',       label: 'Inglés',        emoji: '🇬🇧', color: 0x2980b9, hover: 0x1a5276, ages: ['8-10'] },
+            { key: 'ReadingScene',       label: 'Lectura',       emoji: '📝', color: 0x117a65, hover: 0x0e6655, ages: ['8-10'] }
         ];
 
         const available = allGames.filter(g => g.ages.includes(GameState.ageGroup));

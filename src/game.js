@@ -24,7 +24,8 @@ const config = {
         AlphabetScene,
         WordsScene,
         EnglishScene,
-        MathScene
+        MathScene,
+        ReadingScene
     ]
 };
 

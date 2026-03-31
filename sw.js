@@ -25,7 +25,9 @@ const ASSETS = [
     './src/scenes/AlphabetScene.js',
     './src/scenes/WordsScene.js',
     './src/scenes/EnglishScene.js',
-    './src/scenes/MathScene.js'
+    './src/scenes/MathScene.js',
+    './src/scenes/ReadingScene.js',
+    './src/data/reading_passages.json'
 ];
 
 // Install: cache all assets
